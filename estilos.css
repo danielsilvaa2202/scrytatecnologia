@@ -821,8 +821,8 @@ section {
 
 .flow-core {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 270px;
+    height: 270px;
     background-color: transparent;
     border-radius: 50%;
     display: flex;
@@ -888,8 +888,8 @@ section {
 .zengatax-mockup {
     display: none;
     width: 100%;
-    max-width: 500px;
-    height: 380px;
+    max-width: 550px;
+    height: 420px;
     background: transparent;
     border: none;
     border-radius: 12px;

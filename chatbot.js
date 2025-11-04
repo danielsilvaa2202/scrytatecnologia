@@ -9,16 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const knowledgeBase = [
         {
-            name: 'apiDashboard',
-            keywords: ['api', 'apis', 'dashboard', 'dashboards', 'como funcionam as apis e dashboards'],
-            response: "Ótima pergunta! Nossas <strong>APIs</strong> são a ponte que conecta seus sistemas (ERP, por exemplo) aos portais do governo (eCAC, etc.), permitindo que nossos robôs busquem e enviem dados automaticamente. Os <strong>Dashboards</strong> são as telas visuais que reúnem todas essas informações, transformando dados brutos em insights para você tomar decisões rápidas e em tempo real.",
-            nextOptions: 'solutionsOptions'
+            name: 'zengataxPrice',
+            keywords: ['preco zengatax', 'valor zengatax', 'quanto custa o zengatax', 'planos zengatax', 'quanto custa zengatax'],
+            response: "O <strong>ZengaTax</strong> possui planos e valores definidos! Você pode conferir todos os detalhes diretamente no site oficial.<br><br>👉 <a href='https://www.zengatax.com.br' target='_blank'><strong>Ver preços do ZengaTax</strong></a>",
+            nextOptions: 'zengataxOptions'
         },
         {
             name: 'price',
             keywords: ['preco', 'valor', 'quanto custa', 'orcamento', 'investimento'],
-            response: "Nossas soluções são <strong>100% sob medida</strong> para o seu desafio. Por isso, não trabalhamos com pacotes de preço fixos. O valor depende da complexidade do seu processo e do que precisaremos construir.<br><br>Vamos conversar? Um especialista pode fazer uma análise sem compromisso.",
-            nextOptions: 'contactOptions'
+            response: "Isso depende! Para o nosso produto <strong>ZengaTax</strong>, temos planos com valores definidos no site oficial.<br><br>Para as nossas <strong>outras soluções</strong> de automação (projetos sob medida), o valor é 100% personalizado, pois depende da complexidade do seu processo. Sobre qual você gostaria de saber?",
+            nextOptions: 'priceFollowUp'
+        },
+        {
+            name: 'apiDashboard',
+            keywords: ['api', 'apis', 'dashboard', 'dashboards', 'como funcionam as apis e dashboards'],
+            response: "Ótima pergunta! Nossas <strong>APIs</strong> são a ponte que conecta seus sistemas (ERP, por exemplo) aos portais do governo (eCAC, etc.), permitindo que nossos robôs busquem e enviem dados automaticamente. Os <strong>Dashboards</strong> são as telas visuais que reúnem todas essas informações, transformando dados brutos em insights para você tomar decisões rápidas e em tempo real.",
+            nextOptions: 'solutionsOptions'
         },
         {
             name: 'implementation',
@@ -29,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: 'zengataxSpecific',
             keywords: ['zengatax funciona', 'zengatax e para mim', 'zengatx'],
-            response: "O <strong>ZengaTax</strong> é ideal para escritórios de contabilidade e departamentos fiscais que estão cansados de depender do eCAC e de processos manuais. Ele centraliza tarefas como geração de MIT, DARFs, DCTFWeb e muito mais, tudo em nuvem e de forma automática.",
+            response: "O <strong>ZengaTax</strong> é ideal para escritórios de contabilidade e departamentos fiscais que estão cansados de depender do eCAC e de processos manuais. Ele centraliza tarefas como geração de MIT, DARFs, DCTFWeb e muito mais, tudo em nuvem e de forma automática.<br><br>Você pode conhecer todos os detalhes em <a href='https://www.zengatax.com.br' target='_blank'>www.zengatax.com.br</a>.",
             nextOptions: 'zengataxOptions'
         },
         {
             name: 'zengatax',
             keywords: ['zengatax', 'zenga', 'produto', 'zengatx', 'zengas'],
-            response: "O <strong>ZengaTax</strong> é nossa principal solução all-in-one! Ele foi criado para automatizar a rotina fiscal e contábil, aumentando a eficiência. É o futuro da contabilidade, permitindo que sua equipe pare de depender do eCAC para tudo.",
+            response: "O <strong>ZengaTax</strong> é nossa principal solução all-in-one! Ele foi criado para automatizar a rotina fiscal e contábil, aumentando a eficiência. É o futuro da contabilidade, permitindo que sua equipe pare de depender do eCAC para tudo.<br><br>Conheça mais em <a href='https://www.zengatax.com.br' target='_blank'>www.zengatax.com.br</a>.",
             nextOptions: 'zengataxOptions'
         },
         {
@@ -118,6 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Ver mais soluções', msg: 'Quais são as soluções?' },
             { text: 'Conhecer o ZengaTax', msg: 'O que é o ZengaTax?' },
             { text: 'Falar com especialista', msg: 'Quero falar com um especialista' }
+        ],
+        priceFollowUp: [
+            { text: 'Ver Preços ZengaTax', msg: 'Quanto custa o ZengaTax?' },
+            { text: 'Orçamento (Sob Medida)', msg: 'Quero falar com um especialista' },
+            { text: 'Voltar', msg: 'Voltar ao início' }
         ]
     };
 
