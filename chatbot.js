@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const knowledgeBase = [
         {
+            name: 'apiDashboard',
+            keywords: ['api', 'apis', 'dashboard', 'dashboards', 'como funcionam as apis e dashboards'],
+            response: "Ótima pergunta! Nossas <strong>APIs</strong> são a ponte que conecta seus sistemas (ERP, por exemplo) aos portais do governo (eCAC, etc.), permitindo que nossos robôs busquem e enviem dados automaticamente. Os <strong>Dashboards</strong> são as telas visuais que reúnem todas essas informações, transformando dados brutos em insights para você tomar decisões rápidas e em tempo real.",
+            nextOptions: 'solutionsOptions'
+        },
+        {
             name: 'price',
             keywords: ['preco', 'valor', 'quanto custa', 'orcamento', 'investimento'],
             response: "Nossas soluções são <strong>100% sob medida</strong> para o seu desafio. Por isso, não trabalhamos com pacotes de preço fixos. O valor depende da complexidade do seu processo e do que precisaremos construir.<br><br>Vamos conversar? Um especialista pode fazer uma análise sem compromisso.",
