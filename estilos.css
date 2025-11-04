@@ -81,7 +81,7 @@ header .container {
 }
 
 .logo {
-    height: 40px;
+    height: 60px;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.4s var(--smooth-curve);
@@ -561,9 +561,8 @@ section {
     position: relative; 
 }
 
-/* === MUDANÇA AQUI: Degradê removido === */
 .featured-project-visual::before {
-    display: none; /* Remove o degradê conforme solicitado */
+    display: none;
 }
 
 .visual-blueprint {
@@ -620,7 +619,6 @@ section {
     to { transform: rotate(360deg); }
 }
 
-/* === SEÇÃO CASES DE SUCESSO === */
 .cases-section {
     background-color: var(--black-soft);
     padding: 80px 0;
@@ -630,16 +628,18 @@ section {
 
 .carousel-container {
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     position: relative;
-    margin-top: 50px;
+    margin-top: 30px;
+    padding: 20px 0;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .carousel-track {
     display: flex;
-    width: calc(350px * 10); /* 350px por card * 10 cards (5 originais + 5 duplicatas) */
+    width: calc(350px * 10);
     animation: scroll 40s linear infinite;
 }
 
@@ -652,6 +652,8 @@ section {
     margin: 0 15px;
     border: 1px solid rgba(107, 179, 155, 0.3);
     transition: all 0.4s var(--smooth-curve);
+    position: relative;
+    z-index: 1;
 }
 
 .carousel-container:hover .carousel-track {
@@ -659,9 +661,10 @@ section {
 }
 
 .case-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.03);
     border-color: var(--mint-green);
     box-shadow: 0 15px 40px rgba(133, 230, 192, 0.1);
+    z-index: 10;
 }
 
 .case-card i {
@@ -689,11 +692,9 @@ section {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-380px * 5)); /* (350px + 30px margin) * 5 */
+        transform: translateX(calc(-380px * 5));
     }
 }
-/* === FIM CASES DE SUCESSO === */
-
 
 .zengatax-section {
     background-color: var(--zenga-blue);
@@ -898,7 +899,6 @@ section {
     padding: 20px;
 }
 
-/* === SEÇÃO DE BLOG ATUALIZADA PARA FUNDO DE IMAGEM === */
 .blog-invite-section {
     position: relative; 
     background-color: var(--black-medium); 
@@ -965,7 +965,6 @@ section {
 .blog-invite-content .cta-button {
     align-self: flex-start;
 }
-/* === FIM DA SEÇÃO DE BLOG ATUALIZADA === */
 
 
 @keyframes gradient-pan {
@@ -1103,7 +1102,6 @@ footer {
     border-top: 1px solid rgba(0, 0, 0, 0.1); 
 }
 
-/* === ESTILOS DO RODAPÉ ATUALIZADOS PARA TAMANHOS IGUAIS === */
 .footer-partners {
     display: flex;
     justify-content: center;
@@ -1142,7 +1140,6 @@ footer {
     transform: scale(1.05);
     opacity: 1;
 }
-/* === FIM DA ATUALIZAÇÃO DO RODAPÉ === */
 
 .footer-links {
     display: flex;
@@ -1182,7 +1179,6 @@ footer p {
     opacity: 0.7;
 }
 
-/* === ESTILOS DO MODAL === */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -1255,6 +1251,15 @@ footer p {
     gap: 40px;
 }
 
+.modal-logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .modal-text {
     text-align: left;
 }
@@ -1312,37 +1317,6 @@ footer p {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-on-load {
-    opacity: 0;
-    animation: fadeInUp 1.2s var(--smooth-curve) forwards;
-}
-
-.animate-on-scroll {
-    opacity: 0;
-    transition: all 1s var(--smooth-curve);
-}
-
-.animate-on-scroll.is-visible {
-    opacity: 1;
-    transform: none;
-}
-
-.fade-in-up { transform: translateY(30px); }
-.fade-in-left { transform: translateX(-30px); }
-.fade-in-right { transform: translateX(30px); }
-.scale-up { transform: scale(0.9); }
-
-.delay-1 { transition-delay: 0.1s; animation-delay: 0.2s !important; }
-.delay-2 { transition-delay: 0.2s; animation-delay: 0.4s !important; }
-.delay-3 { transition-delay: 0.3s; animation-delay: 0.6s !important; }
-.delay-4 { transition-delay: 0.4s !important; animation-delay: 0.8s !important; }
-
 @media (max-width: 900px) {
     .hero-logo {
         max-width: 320px;
@@ -1390,12 +1364,12 @@ footer p {
     }
 
     .case-card {
-        width: 300px; /* Diminui o card no mobile */
+        width: 300px;
         margin: 0 10px;
     }
 
     .carousel-track {
-        width: calc(320px * 10); /* (300px + 20px margin) * 10 */
+        width: calc(320px * 10);
         animation: scroll-mobile 40s linear infinite;
     }
 
@@ -1486,35 +1460,29 @@ footer p {
 
     .modal-content {
         max-width: 500px;
-        padding: 20px;
+        padding: 25px;
     }
-
     .modal-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 25px;
     }
-
-    .modal-visual-container {
-        order: -1; /* Coloca a imagem no topo em telas menores */
+    .modal-logo {
+        height: 50px;
+        margin: 0 auto 25px;
+        display: block;
     }
-
-    .modal-image {
-        max-width: 200px; /* Imagem menor no mobile */
-        margin: 0 auto;
-    }
-    
     .modal-text {
         text-align: center;
     }
-
     .modal-text h2 {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
-
     .modal-text p {
         text-align: center;
-        font-size: 0.9rem;
+    }
+    .modal-visual-container {
+        display: none;
     }
 
 }
@@ -1533,16 +1501,13 @@ footer p {
     .zengatax-mockup { display: flex; }
 
     .modal-content {
-        padding: 20px;
+        padding: 30px 25px;
     }
 
     .modal-grid {
         gap: 15px;
     }
 
-    .modal-visual-container {
-        display: none; /* Esconde a imagem em telas muito pequenas */
-    }
 }
 
 @media (max-width: 900px) {

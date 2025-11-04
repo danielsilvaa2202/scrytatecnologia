@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
         animate();
     }
 
-    // === LÓGICA DO MODAL ===
     const modal = document.getElementById('popup-modal');
     const closeModalButton = document.getElementById('modal-close-button');
     const modalCtaButton = document.getElementById('modal-cta-button');
@@ -144,20 +143,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Mostrar o modal após 2 segundos
     setTimeout(showModal, 2000);
 
-    // Fechar ao clicar no 'X'
     if (closeModalButton) {
         closeModalButton.addEventListener('click', closeModal);
     }
 
-    // Fechar ao clicar no botão CTA (que é um link de âncora)
     if (modalCtaButton) {
         modalCtaButton.addEventListener('click', closeModal);
     }
 
-    // Fechar ao clicar fora do conteúdo (no overlay)
     if (modal) {
         modal.addEventListener('click', (event) => {
             if (event.target === modal) {

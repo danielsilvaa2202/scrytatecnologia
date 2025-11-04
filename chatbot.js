@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: 'solutions',
             keywords: ['o que a scryta faz', 'solucoes', 'servicos', 'automacao', 'fiscal', 'contabil', 'solucao', 'solusoes'],
-            response: "Somos especialistas em criar sistemas <strong>all-in-one em nuvem</strong> para operações fiscais e contábeis. Nossas principais frentes são: <br><br>1. <strong>Automação Fiscal de Ponta a Ponta</strong> (captura de notas, geração de guias como MIT e DCTFWeb). <br>2. <strong>APIs e Sistemas Integrados</strong> (conectamos seu ERP aos portais do governo). <br>3. <strong>Dashboards</strong> para decisões rápidas e em tempo real.",
+            response: "Somos especialistas em criar sistemas <strong>all-in-one em nuvem</strong> testados em nossa própria operação de larga escala. Trazemos <strong>agilidade de quem está na linha de frente</strong> para sua operação, com Automação Fiscal, APIs e Dashboards em tempo real.",
             nextOptions: 'solutionsOptions'
         },
         {
             name: 'aboutScryta',
             keywords: ['sobre a scryta', 'empresa scryta', 'quem e a scryta', 'scryta', 'scrita', 'scripta', 'dna fiscal'],
-            response: "A <strong>SCRYTA TECNOLOGIA</strong> é uma empresa que nasceu de uma necessidade real, dentro da <strong>SCRYTA ASSESSORIA CONTÁBIL</strong>. Cansados de processos manuais, criamos nossas próprias ferramentas e agora transformamos essa experiência em soluções de automação robustas e inteligentes. Nós temos <strong>DNA Fiscal</strong>!",
+            response: "Nossa origem vem da <strong>SCRYTA ASSESSORIA CONTÁBIL</strong>, com 18 anos de mercado e mais de 1.000 clientes. Cansados de processos manuais, criamos nossas próprias ferramentas. Hoje, resolvemos os desafios que mais ninguém entende, porque estamos na linha de frente processando em larga escala. <strong>Esse é o nosso jogo.</strong>",
             nextOptions: 'generalFollowUp'
         },
         {
