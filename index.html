@@ -42,17 +42,37 @@
                     <li><a href="#especialistas">Soluções</a></li>
                     <li><a href="#abordagem">Abordagem</a></li>
                     <li><a href="#projetos-destaque">Projetos</a></li>
-                    <li><a href="#cases-sucesso">Cases</a></li>
+                    <li><a href="#automacoes">Automações</a></li>
                     <li><a href="#zengatax">Produto</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
+    <div id="mobile-nav-container" class="mobile-nav-container">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#sobre-nos">Sobre</a></li>
+                <li><a href="#especialistas">Soluções</a></li>
+                <li><a href="#abordagem">Abordagem</a></li>
+                <li><a href="#projetos-destaque">Projetos</a></li>
+                <li><a href="#automacoes">Automações</a></li>
+                <li><a href="#zengatax">Produto</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <main>
-        <section id="hero" class="hero-section">
+        <section id="hero" class="hero-section" data-header-theme="light">
             <canvas id="hero-canvas"></canvas>
             <div class="container">
                 <div class="hero-content">
@@ -65,7 +85,7 @@
             </div>
         </section>
 
-        <section id="sobre-nos" class="about-section">
+        <section id="sobre-nos" class="about-section" data-header-theme="light">
             <div class="container about-grid">
                 <div class="about-content animate-on-scroll fade-in-left">
                     <h2 class="section-title">Nascidos da Expertise Contábil</h2>
@@ -100,7 +120,7 @@
             </div>
         </section>
 
-        <section id="abordagem" class="approach-section">
+        <section id="abordagem" class="approach-section" data-header-theme="dark">
             <div class="container">
                 <h2 class="section-title animate-on-scroll fade-in-up">Nossa Abordagem Única</h2>
                 <div class="approach-grid">
@@ -132,7 +152,7 @@
             </div>
         </section>
 
-        <section id="especialistas" class="specialists-section">
+        <section id="especialistas" class="specialists-section" data-header-theme="dark">
             <div class="container">
                 <h2 class="section-title animate-on-scroll fade-in-up">Pare de perder tempo com tarefas manuais.</h2>
                 <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Nós criamos sistemas <strong>all-in-one em nuvem</strong> testados em nossa própria operação de larga escala. Trazemos <strong>agilidade de quem está na linha de frente</strong> para sua operação fiscal e contábil.</p>
@@ -159,10 +179,13 @@
                         <p>Transforme dados brutos em insights. Nossas plataformas oferecem relatórios em tempo real para que você tenha agilidade total na tomada de decisões.</p>
                     </div>
                 </div>
+                <div class="cta-container animate-on-scroll fade-in-up">
+                    <a href="https://wa.me/5541987132156" target="_blank" rel="noopener noreferrer" class="cta-button">Solicite uma Avaliação Gratuita</a>
+                </div>
             </div>
         </section>
 
-        <section id="projetos-destaque" class="featured-projects-section">
+        <section id="projetos-destaque" class="featured-projects-section" data-header-theme="dark">
             <div class="container">
                 <h2 class="section-title animate-on-scroll fade-in-up">Automação Sob Medida. Performance Sem Limites.</h2>
                 <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Não vendemos software. Criamos a solução exata para o seu desafio fiscal e contábil.</p>
@@ -189,16 +212,17 @@
             </div>
         </section>
 
-        <section id="cases-sucesso" class="cases-section">
+        <section id="automacoes" class="cases-section" data-header-theme="dark">
             <div class="container">
-                <h2 class="section-title animate-on-scroll fade-in-up">Cases de Sucesso</h2>
-                <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Soluções que já entregamos e transformaram a operação dos nossos clientes.</p>
+                <h2 class="section-title animate-on-scroll fade-in-up">Automações</h2>
+                <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Soluções que possuímos e podem transformar a sua operação.</p>
+                <p class="section-description animate-on-scroll fade-in-up delay-1">Tecnologias, integrações e fluxos automatizados que já desenvolvemos e aplicamos em operações, prontos para adaptar à sua necessidade.</p>
             </div>
             <div class="carousel-container animate-on-scroll fade-in-up delay-2">
                 <div class="carousel-track">
                     <div class="case-card">
                         <i class="fas fa-calculator"></i>
-                        <h3>Automação Simples Nacional</h3>
+                        <h3>Simples Nacional</h3>
                         <p>Auditoria automática, baixa de XML em lote, apontamento de diferenças do sistema contábil, entrega de PGDAS e DAS.</p>
                     </div>
                     <div class="case-card">
@@ -213,17 +237,17 @@
                     </div>
                     <div class="case-card">
                         <i class="fas fa-clock"></i>
-                        <h3>Sistema de Apontamento de Horas</h3>
+                        <h3>Apontamento de Horas</h3>
                         <p>Realização de tarefas com cronometragem, acompanhamento de produtividade da equipe e individual por colaborador.</p>
                     </div>
                     <div class="case-card">
                         <i class="fas fa-exclamation-triangle"></i>
-                        <h3>Automação Levantamento de Débitos</h3>
+                        <h3>Levantamento de Débitos</h3>
                         <p>Relatório de pendências centralizadas (previdenciárias e federais) com visualização em lote e painel de controle unificado.</p>
                     </div>
                     <div class="case-card">
                         <i class="fas fa-calculator"></i>
-                        <h3>Automação Simples Nacional</h3>
+                        <h3>Simples Nacional</h3>
                         <p>Auditoria automática, baixa de XML em lote, apontamento de diferenças do sistema contábil, entrega de PGDAS e DAS.</p>
                     </div>
                     <div class="case-card">
@@ -238,19 +262,19 @@
                     </div>
                     <div class="case-card">
                         <i class="fas fa-clock"></i>
-                        <h3>Sistema de Apontamento de Horas</h3>
+                        <h3>Apontamento de Horas</h3>
                         <p>Realização de tarefas com cronometragem, acompanhamento de produtividade da equipe e individual por colaborador.</p>
                     </div>
                     <div class="case-card">
                         <i class="fas fa-exclamation-triangle"></i>
-                        <h3>Automação Levantamento de Débitos</h3>
+                        <h3>Levantamento de Débitos</h3>
                         <p>Relatório de pendências centralizadas (previdenciárias e federais) com visualização em lote e painel de controle unificado.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="zengatax" class="zengatax-section">
+        <section id="zengatax" class="zengatax-section" data-header-theme="dark">
             <div class="container zengatax-container">
                 <div class="zengatax-content animate-on-scroll fade-in-left">
                     <h3 class="zenga-intro-subtitle">Visualize nossa solução All-in-One:</h3>
@@ -318,7 +342,7 @@
             </div>
         </section>
 
-        <section id="blog" class="blog-invite-section">
+        <section id="blog" class="blog-invite-section" data-header-theme="dark">
             <div class="blog-background-image animate-on-scroll"></div> <div class="container blog-invite-container">
                 <div class="blog-invite-content animate-on-scroll fade-in-left">
                     <h2 class="section-title">Confira nosso Blog</h2>
@@ -329,7 +353,7 @@
         </section>
 
 
-        <section id="cta" class="cta-section animate-on-scroll scale-up">
+        <section id="cta" class="cta-section" data-header-theme="light">
             <div class="container">
                 <h2>Sua Contabilidade na Próxima Geração</h2>
                 <p>Deixe as planilhas para trás. Nossa equipe está pronta para construir a solução que sua operação merece.</p>
@@ -337,7 +361,7 @@
             </div>
         </section>
         
-        <section id="contato" class="contact-section">
+        <section id="contato" class="contact-section" data-header-theme="light">
             <div class="container contact-grid">
                 <div class="contact-info animate-on-scroll fade-in-left">
                     <h2 class="section-title">Fale Conosco</h2>
@@ -348,7 +372,8 @@
                     </div>
                 </div>
 
-                <form action="#" class="contact-form animate-on-scroll fade-in-up delay-2">
+                <form name="contact" method="POST" data-netlify="true" class="contact-form animate-on-scroll fade-in-up delay-2">
+                    <input type="hidden" name="form-name" value="contact" />
                     <div class="form-group-minimal">
                         <input type="text" name="nome" id="nome" required>
                         <label for="nome">Seu nome</label>
@@ -408,6 +433,20 @@
             </div>
         </div>
     </div>
+
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="success-modal-close-button">&times;</button>
+            <div class="modal-body" style="text-align: center;">
+                <div class_="" style="padding: 20px 0 0 0;">
+                    <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--dark-sage); margin-bottom: 25px;"></i>
+                    <h2 style="font-size: 1.7rem; font-weight: 700; color: var(--black-soft); margin-bottom: 15px;">Mensagem Enviada!</h2>
+                    <p style="font-size: 1rem; color: #333; margin-bottom: 30px;">Obrigado por entrar em contato. Responderemos em breve!</p>
+                    <button class="cta-button modal-cta" id="success-modal-ok-button" style="background-color: var(--black-soft); color: var(--cream-white);">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="chatbot-trigger">
         <i class="fas fa-comment-dots"></i>
     </div>
@@ -424,9 +463,9 @@
             <button id="chat-close-btn">&times;</button>
         </div>
         <div id="chat-messages">
-            </div>
+        </div>
         <div id="chat-pre-options">
-            </div>
+        </div>
         <div class="chat-input-area">
             <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
             <button id="chat-send-btn">

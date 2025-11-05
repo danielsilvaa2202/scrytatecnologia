@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const header = document.getElementById('main-header');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileNavContainer = document.getElementById('mobile-nav-container');
+
     if (header) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) { 
@@ -18,8 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Lógica do Menu Mobile (estava correta, mantida como original)
+    if (mobileMenuToggle && mobileNavContainer) {
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('is-open');
+            mobileNavContainer.classList.toggle('is-open');
+            document.body.classList.toggle('mobile-nav-open');
+        });
+
+        mobileNavContainer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('is-open');
+                mobileNavContainer.classList.remove('is-open');
+                document.body.classList.remove('mobile-nav-open');
+            });
+        });
+    }
+
+    // Lógica de Animação ao Rolar
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
-    const observer = new IntersectionObserver((entries, observer) => {
+    const animationObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
@@ -33,9 +54,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     elementsToAnimate.forEach(element => {
-        observer.observe(element);
+        animationObserver.observe(element);
     });
 
+    // Lógica de Tema do Header
+    const headerThemeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && header) {
+                const theme = entry.target.getAttribute('data-header-theme');
+                if (theme === 'dark') {
+                    header.classList.add('header-dark-theme');
+                } else {
+                    header.classList.remove('header-dark-theme');
+                }
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0
+    });
+
+    const themedSections = document.querySelectorAll('[data-header-theme]');
+    themedSections.forEach(section => {
+        headerThemeObserver.observe(section);
+    });
+
+    // Lógica do Canvas (Partículas)
     const canvas = document.getElementById('hero-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
@@ -127,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animate();
     }
 
+    // Lógica do Modal Pop-up
     const modal = document.getElementById('popup-modal');
     const closeModalButton = document.getElementById('modal-close-button');
     const modalCtaButton = document.getElementById('modal-cta-button');
@@ -143,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    setTimeout(showModal, 2000);
+    setTimeout(showModal, 2000); // Mostra o modal inicial após 2 segundos
 
     if (closeModalButton) {
         closeModalButton.addEventListener('click', closeModal);
@@ -160,4 +206,62 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // === FIX: Lógica do Formulário Netlify e Modal de Sucesso ===
+    
+    const contactForm = document.querySelector('form[name="contact"]');
+    const successModal = document.getElementById('success-modal');
+    const successModalCloseBtn = document.getElementById('success-modal-close-button');
+    const successModalOkBtn = document.getElementById('success-modal-ok-button');
+
+    // Função para fechar o modal de sucesso
+    const closeSuccessModal = () => {
+        if (successModal) {
+            successModal.classList.remove('is-visible');
+        }
+    };
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Impede o recarregamento da página
+
+            const formData = new FormData(contactForm);
+            
+            // Envia os dados para o Netlify em background
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // Sucesso
+                contactForm.reset(); // Limpa o formulário
+                if (successModal) {
+                    successModal.classList.add('is-visible'); // Mostra o modal de sucesso
+                }
+            })
+            .catch((error) => {
+                // Erro
+                alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
+                console.error('Form submission error:', error);
+            });
+        });
+    }
+
+    // Handlers para fechar o modal de sucesso
+    if (successModalCloseBtn) {
+        successModalCloseBtn.addEventListener('click', closeSuccessModal);
+    }
+    if (successModalOkBtn) {
+        successModalOkBtn.addEventListener('click', closeSuccessModal);
+    }
+    if (successModal) {
+        successModal.addEventListener('click', (event) => {
+            if (event.target === successModal) {
+                closeSuccessModal();
+            }
+        });
+    }
+    // === FIM DO FIX DO FORMULÁRIO ===
+
 });
