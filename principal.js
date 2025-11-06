@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- Preloader ---
     const preloader = document.getElementById('preloader');
     if (preloader) {
         window.addEventListener('load', () => {
@@ -7,10 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Header Fixo (Sticky) ---
     const header = document.getElementById('main-header');
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileNavContainer = document.getElementById('mobile-nav-container');
-
     if (header) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) { 
@@ -21,7 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lógica do Menu Mobile (estava correta, mantida como original)
+    // --- Menu Mobile ---
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileNavContainer = document.getElementById('mobile-nav-container');
+
     if (mobileMenuToggle && mobileNavContainer) {
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenuToggle.classList.toggle('is-open');
@@ -38,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lógica de Animação ao Rolar
+    // --- Animação ao Rolar (Scroll Observer) ---
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
     const animationObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animationObserver.observe(element);
     });
 
-    // Lógica de Tema do Header
+    // --- Controle de Tema do Header ---
     const headerThemeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && header) {
@@ -80,7 +82,114 @@ document.addEventListener('DOMContentLoaded', () => {
         headerThemeObserver.observe(section);
     });
 
-    // Lógica do Canvas (Partículas)
+    // =========================================
+    // === NOVO: Slider de Automações (Corrigido e com Auto-Play) ===
+    // =========================================
+    const initAutomationsSlider = () => {
+        const sliderTrack = document.querySelector('.slider-track');
+        const sliderContainer = document.querySelector('.slider-container'); // Usado para medir largura
+        if (!sliderTrack || !sliderContainer) return;
+
+        const slides = Array.from(sliderTrack.children);
+        const nextButton = document.getElementById('slider-next');
+        const prevButton = document.getElementById('slider-prev');
+        const dotsNav = document.getElementById('slider-dots');
+
+        if (slides.length === 0) return;
+
+        let currentSlideIndex = 0;
+        let autoPlayInterval;
+        const AUTO_PLAY_DELAY = 5000; // 5 segundos por slide
+
+        // 1. Criar Dots
+        dotsNav.innerHTML = '';
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('slider-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.setAttribute('aria-label', `Ir para slide ${index + 1}`);
+            dot.addEventListener('click', () => {
+                resetAutoPlay(); // Pausa o auto-play ao interagir
+                goToSlide(index);
+            });
+            dotsNav.appendChild(dot);
+        });
+        const dots = Array.from(dotsNav.children);
+
+        // 2. Função Principal de Navegação
+        const goToSlide = (index) => {
+            // Lógica de Loop Infinito
+            if (index < 0) {
+                index = slides.length - 1;
+            } else if (index >= slides.length) {
+                index = 0;
+            }
+
+            currentSlideIndex = index;
+            
+            // Calcula a largura baseada no container visível para maior precisão
+            const width = sliderContainer.getBoundingClientRect().width;
+            sliderTrack.style.transform = `translateX(-${currentSlideIndex * width}px)`;
+
+            // Atualiza classes ativas
+            slides.forEach((slide, i) => slide.classList.toggle('active', i === currentSlideIndex));
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlideIndex));
+        };
+
+        // 3. Funções de Auto-Play
+        const startAutoPlay = () => {
+            stopAutoPlay(); // Garante que não tem dois intervalos rodando
+            autoPlayInterval = setInterval(() => {
+                goToSlide(currentSlideIndex + 1);
+            }, AUTO_PLAY_DELAY);
+        };
+
+        const stopAutoPlay = () => {
+            if (autoPlayInterval) clearInterval(autoPlayInterval);
+        };
+
+        const resetAutoPlay = () => {
+            stopAutoPlay();
+            startAutoPlay();
+        };
+
+        // 4. Event Listeners das Setas
+        if (nextButton) {
+            nextButton.addEventListener('click', () => {
+                resetAutoPlay();
+                goToSlide(currentSlideIndex + 1);
+            });
+        }
+
+        if (prevButton) {
+            prevButton.addEventListener('click', () => {
+                resetAutoPlay();
+                goToSlide(currentSlideIndex - 1);
+            });
+        }
+
+        // 5. Responsividade (Recalcula posição ao redimensionar tela)
+        window.addEventListener('resize', () => {
+            // Remove transição momentaneamente para ajuste instantâneo
+            sliderTrack.style.transition = 'none';
+            goToSlide(currentSlideIndex);
+            // Restaura a transição após um breve delay
+            setTimeout(() => {
+                sliderTrack.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1)';
+            }, 50);
+        });
+
+        // Inicialização
+        goToSlide(0);
+        startAutoPlay(); // Inicia o slider automático
+    };
+
+    // Inicializa o slider
+    initAutomationsSlider();
+
+    // =========================================
+    // === Canvas Hero (Partículas) ===
+    // =========================================
     const canvas = document.getElementById('hero-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
@@ -93,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
             defaultRadius: 2,
             variantRadius: 2,
             defaultSpeed: 0.5,
-            variantSpeed: 1,
             linkRadius: 150,
         };
 
@@ -166,19 +274,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        window.addEventListener('resize', setupCanvas);
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(setupCanvas, 200);
+        });
 
         setupCanvas();
         animate();
     }
 
-    // Lógica do Modal Pop-up
+    // --- Modais ---
     const modal = document.getElementById('popup-modal');
     const closeModalButton = document.getElementById('modal-close-button');
     const modalCtaButton = document.getElementById('modal-cta-button');
 
     const showModal = () => {
-        if (modal) {
+        if (modal && !localStorage.getItem('modalShown')) {
             modal.classList.add('is-visible');
         }
     };
@@ -189,79 +301,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    setTimeout(showModal, 2000); // Mostra o modal inicial após 2 segundos
+    setTimeout(showModal, 3000);
 
-    if (closeModalButton) {
-        closeModalButton.addEventListener('click', closeModal);
-    }
-
-    if (modalCtaButton) {
-        modalCtaButton.addEventListener('click', closeModal);
-    }
-
+    if (closeModalButton) closeModalButton.addEventListener('click', closeModal);
+    if (modalCtaButton) modalCtaButton.addEventListener('click', closeModal);
     if (modal) {
         modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                closeModal();
-            }
+            if (event.target === modal) closeModal();
         });
     }
 
-    // === FIX: Lógica do Formulário Netlify e Modal de Sucesso ===
-    
+    // --- Formulário de Contato ---
     const contactForm = document.querySelector('form[name="contact"]');
     const successModal = document.getElementById('success-modal');
     const successModalCloseBtn = document.getElementById('success-modal-close-button');
     const successModalOkBtn = document.getElementById('success-modal-ok-button');
 
-    // Função para fechar o modal de sucesso
     const closeSuccessModal = () => {
-        if (successModal) {
-            successModal.classList.remove('is-visible');
-        }
+        if (successModal) successModal.classList.remove('is-visible');
     };
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Impede o recarregamento da página
-
+            e.preventDefault();
             const formData = new FormData(contactForm);
             
-            // Envia os dados para o Netlify em background
             fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(formData).toString()
             })
             .then(() => {
-                // Sucesso
-                contactForm.reset(); // Limpa o formulário
-                if (successModal) {
-                    successModal.classList.add('is-visible'); // Mostra o modal de sucesso
-                }
+                contactForm.reset();
+                if (successModal) successModal.classList.add('is-visible');
             })
             .catch((error) => {
-                // Erro
-                alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
-                console.error('Form submission error:', error);
+                alert('Erro ao enviar mensagem. Tente novamente.');
+                console.error('Form error:', error);
             });
         });
     }
 
-    // Handlers para fechar o modal de sucesso
-    if (successModalCloseBtn) {
-        successModalCloseBtn.addEventListener('click', closeSuccessModal);
-    }
-    if (successModalOkBtn) {
-        successModalOkBtn.addEventListener('click', closeSuccessModal);
-    }
+    if (successModalCloseBtn) successModalCloseBtn.addEventListener('click', closeSuccessModal);
+    if (successModalOkBtn) successModalOkBtn.addEventListener('click', closeSuccessModal);
     if (successModal) {
-        successModal.addEventListener('click', (event) => {
-            if (event.target === successModal) {
-                closeSuccessModal();
-            }
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) closeSuccessModal();
         });
     }
-    // === FIM DO FIX DO FORMULÁRIO ===
-
 });

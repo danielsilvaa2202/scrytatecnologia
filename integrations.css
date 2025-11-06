@@ -1,0 +1,234 @@
+/* Integrations Section - Orbital Layout */
+.integrations-section {
+    background-color: var(--black-medium);
+    padding: 100px 0;
+    text-align: center;
+    overflow: visible;
+}
+
+/* Container da Órbita */
+.orbit-container {
+    position: relative;
+    width: 440px; /* Mantido em 440px */
+    height: 440px;
+    margin: 80px auto 0;
+    border-radius: 50%;
+    border: 1px dashed rgba(107, 179, 155, 0.15);
+    animation: none;
+}
+
+/* Efeito de ondas */
+.orbit-container::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(107, 179, 155, 0.05);
+    animation: pulse-orbit 4s infinite ease-out;
+}
+
+@keyframes pulse-orbit {
+    0% { width: 30%; height: 30%; opacity: 0.8; }
+    100% { width: 100%; height: 100%; opacity: 0; }
+}
+
+/* HUB CENTRAL - APENAS o fundo verde claro da paleta e logo preta */
+.center-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px; /* Mantido em 160px */
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* APENAS o fundo verde claro (mint-green) */
+    background-color: var(--mint-green);
+    border-radius: 50%;
+    z-index: 2;
+    /* Borda e sombra sutis para não competir com a logo */
+    border: 1px solid rgba(107, 179, 155, 0.4);
+    box-shadow: 0 0 20px rgba(133, 230, 192, 0.3);
+}
+
+.hub-logo {
+    max-width: 120px; /* Mantido em 120px */
+    height: auto;
+    position: relative;
+    z-index: 3;
+    filter: none; /* Garante que a logo preta não seja alterada */
+}
+
+/* O GLOW foi removido pois ele criava um "círculo" adicional */
+.hub-glow {
+    display: none;
+}
+
+/* ITENS DA ÓRBITA */
+.orbit-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 65px; /* Mantido em 65px */
+    height: 65px;
+    top: 50%;
+    left: 50%;
+    margin: -32.5px; /* Metade do novo width/height */
+    transition: all 0.3s var(--smooth-curve);
+    cursor: pointer;
+}
+
+.orbit-circle {
+    width: 50px; /* Mantido em 50px */
+    height: 50px;
+    background: var(--black-soft);
+    border: 2px solid rgba(107, 179, 155, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.orbit-circle i {
+    font-size: 1.2rem; /* Mantido em 1.2rem */
+    color: var(--dark-sage);
+    transition: all 0.3s ease;
+}
+
+.orbit-label {
+    position: absolute;
+    bottom: -22px; /* Mantido em -22px */
+    font-size: 0.8rem; /* Mantido em 0.8rem */
+    font-weight: 700;
+    color: var(--cream-white);
+    opacity: 0.7;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.orbit-item:hover .orbit-circle {
+    border-color: var(--mint-green);
+    box-shadow: 0 0 25px rgba(133, 230, 192, 0.4);
+    transform: scale(1.1);
+    background-color: rgba(107, 179, 155, 0.1);
+}
+
+.orbit-item:hover .orbit-circle i {
+    color: var(--mint-green);
+}
+
+.orbit-item:hover .orbit-label {
+    opacity: 1;
+    color: var(--mint-green);
+    bottom: -27px; /* Mantido em -27px */
+}
+
+/* POSICIONAMENTO (Raio ajustado para 220px para caber no container de 440px) */
+.pos-1 { transform: rotate(-90deg) translate(220px) rotate(90deg); } /* Topo */
+.pos-2 { transform: rotate(-45deg) translate(220px) rotate(45deg); } /* NE */
+.pos-3 { transform: rotate(0deg)   translate(220px) rotate(0deg); }   /* Direita */
+.pos-4 { transform: rotate(45deg)  translate(220px) rotate(-45deg); } /* SE */
+.pos-5 { transform: rotate(90deg)  translate(220px) rotate(-90deg); } /* Base */
+.pos-6 { transform: rotate(135deg) translate(220px) rotate(-135deg); }/* SO */
+.pos-7 { transform: rotate(180deg) translate(220px) rotate(-180deg); }/* Esquerda */
+.pos-8 { transform: rotate(225deg) translate(220px) rotate(-225deg); }/* NO */
+
+/* Integrations Media Queries */
+@media (max-width: 768px) {
+    .orbit-container {
+        width: 300px; /* Mantido em 300px para tablets */
+        height: 300px;
+        margin-top: 50px;
+    }
+    .center-hub {
+        width: 120px; /* Mantido em 120px */
+        height: 120px;
+    }
+    .hub-logo {
+        max-width: 90px; /* Mantido em 90px */
+    }
+    
+    /* Reduz o raio da órbita no mobile (150px para container de 300px) */
+    .pos-1 { transform: rotate(-90deg) translate(150px) rotate(90deg); }
+    .pos-2 { transform: rotate(-45deg) translate(150px) rotate(45deg); }
+    .pos-3 { transform: rotate(0deg)   translate(150px) rotate(0deg); }
+    .pos-4 { transform: rotate(45deg)  translate(150px) rotate(-45deg); }
+    .pos-5 { transform: rotate(90deg)  translate(150px) rotate(-90deg); }
+    .pos-6 { transform: rotate(135deg) translate(150px) rotate(-135deg); }
+    .pos-7 { transform: rotate(180deg) translate(150px) rotate(-180deg); }
+    .pos-8 { transform: rotate(225deg) translate(150px) rotate(-225deg); }
+
+    .orbit-item {
+        width: 60px;
+        height: 60px;
+        margin: -30px;
+    }
+    .orbit-circle {
+        width: 40px; /* Mantido em 40px */
+        height: 40px;
+    }
+    .orbit-circle i {
+        font-size: 1rem; /* Mantido em 1rem */
+    }
+    .orbit-label {
+        font-size: 0.7rem; /* Mantido em 0.7rem */
+        bottom: -18px;
+    }
+}
+
+@media (max-width: 400px) {
+     /* Layout em lista para telas muito pequenas */
+     .orbit-container {
+         width: 100%;
+         height: auto;
+         border: none;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 20px;
+         margin-top: 40px;
+     }
+     .orbit-container::before { display: none; }
+     .center-hub {
+         position: relative;
+         top: auto; left: auto;
+         transform: none;
+         margin-bottom: 30px;
+         width: 100px; /* Mantido em 100px no mobile list */
+         height: 100px;
+     }
+     .hub-logo {
+        max-width: 70px; /* Mantido em 70px no mobile list */
+     }
+     .orbit-item {
+         position: relative;
+         top: auto; left: auto;
+         margin: 0;
+         transform: none !important;
+         flex-direction: row;
+         width: auto;
+         height: auto;
+         gap: 15px;
+     }
+     .orbit-circle {
+        width: 35px; /* Mantido em 35px */
+        height: 35px;
+     }
+     .orbit-circle i {
+        font-size: 0.9rem; /* Mantido em 0.9rem */
+     }
+     .orbit-label {
+         position: relative;
+         bottom: auto;
+         opacity: 1;
+         font-size: 0.8rem; /* Mantido em 0.8rem */
+     }
+}

@@ -8,24 +8,22 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/favicons/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="img/favicons/android-chrome-512x512.png">
-    <link rel="icon" type="image/png" sizes="128x128" href="img/favicons/favicon-128x128.png">
-    <link rel="icon" type="image/png" sizes="256x256" href="img/favicons/favicon-256x256.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="img/favicons/favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="img/favicons/favicon-64x64.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
     <link rel="shortcut icon" href="img/favicons/favicon.ico">
-    <meta name="msapplication-TileColor" content="#0b0b0d">
     <meta name="theme-color" content="#0b0b0d">
-
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="chatbot.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="sections.css">
+    <link rel="stylesheet" href="integrations.css">
+    <link rel="stylesheet" href="automations.css">
+    <link rel="stylesheet" href="zengatax.css">
+    <link rel="stylesheet" href="modals.css">
+    <link rel="stylesheet" href="chatbot.css">
+
 </head>
 <body>
 
@@ -40,8 +38,8 @@
                 <ul>
                     <li><a href="#sobre-nos">Sobre</a></li>
                     <li><a href="#especialistas">Soluções</a></li>
+                    <li><a href="#integracoes">Integrações</a></li>
                     <li><a href="#abordagem">Abordagem</a></li>
-                    <li><a href="#projetos-destaque">Projetos</a></li>
                     <li><a href="#automacoes">Automações</a></li>
                     <li><a href="#zengatax">Produto</a></li>
                     <li><a href="#blog">Blog</a></li>
@@ -61,8 +59,8 @@
             <ul>
                 <li><a href="#sobre-nos">Sobre</a></li>
                 <li><a href="#especialistas">Soluções</a></li>
+                <li><a href="#integracoes">Integrações</a></li>
                 <li><a href="#abordagem">Abordagem</a></li>
-                <li><a href="#projetos-destaque">Projetos</a></li>
                 <li><a href="#automacoes">Automações</a></li>
                 <li><a href="#zengatax">Produto</a></li>
                 <li><a href="#blog">Blog</a></li>
@@ -77,9 +75,7 @@
             <div class="container">
                 <div class="hero-content">
                     <img src="img/logo.png" alt="Logo SCRYTA TECNOLOGIA" class="hero-logo animate-on-load">
-                    
                     <h2 class="hero-subtitle animate-on-load delay-1"> <b>Tecnologia. </b>Esse é o nosso jogo.</h2>
-                    
                     <a href="#contato" class="cta-button animate-on-load delay-2">Transforme seu Negócio</a>
                 </div>
             </div>
@@ -97,26 +93,86 @@
                     <img src="img/scrytaassessoria.png" alt="Logo Scryta Assessoria" class="about-visual-logo">
                     <div class="dna-container">
                         <div class="dna-strand"></div>
-                        <div class="dna-node node-left node-1">
-                            <i class="fas fa-file-excel"></i> Planilhas
-                        </div>
-                        <div class="dna-node node-right node-2">
-                            <i class="fas fa-robot"></i> Automação
-                        </div>
-                        <div class="dna-node node-left node-3">
-                            <i class="fas fa-landmark"></i> eCAC
-                        </div>
-                        <div class="dna-node node-right node-4">
-                            <i class="fas fa-chart-pie"></i> Dashboards
-                        </div>
-                        <div class="dna-node node-left node-5">
-                            <i class="fas fa-file-alt"></i> SPED
-                        </div>
-                        <div class="dna-node node-right node-6">
-                            <i class="fas fa-cogs"></i> APIs
-                        </div>
+                        <div class="dna-node node-left node-1"><i class="fas fa-file-excel"></i> Planilhas</div>
+                        <div class="dna-node node-right node-2"><i class="fas fa-robot"></i> Automação</div>
+                        <div class="dna-node node-left node-3"><i class="fas fa-landmark"></i> eCAC</div>
+                        <div class="dna-node node-right node-4"><i class="fas fa-chart-pie"></i> Dashboards</div>
+                        <div class="dna-node node-left node-5"><i class="fas fa-file-alt"></i> SPED</div>
+                        <div class="dna-node node-right node-6"><i class="fas fa-cogs"></i> APIs</div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="especialistas" class="specialists-section" data-header-theme="dark">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll fade-in-up">Pare de perder tempo com tarefas manuais.</h2>
+                <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Nós criamos sistemas <strong>all-in-one em nuvem</strong> testados em nossa própria operação de larga escala. Trazemos <strong>agilidade de quem está na linha de frente</strong> para sua operação fiscal e contábil.</p>
+                <div class="specialists-grid">
+                    <div class="specialist-card animate-on-scroll fade-in-up">
+                        <div class="icon-wrapper"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3>Automação Fiscal de Ponta a Ponta</h3>
+                        <p>Desde a captura de notas até a geração de guias como MIT e DCTFWeb. Nossos sistemas trabalham 24/7 para garantir conformidade total e zero retrabalho.</p>
+                    </div>
+                    <div class="specialist-card animate-on-scroll fade-in-up delay-1">
+                        <div class="icon-wrapper"><i class="fas fa-plug"></i></div>
+                        <h3>APIs e Sistemas All-in-One</h3>
+                        <p>Conectamos seu ERP aos portais do governo e qualquer outra fonte de dados em um único sistema em nuvem. Rápido, ágil e sob medida para você.</p>
+                    </div>
+                    <div class="specialist-card animate-on-scroll fade-in-up delay-2">
+                        <div class="icon-wrapper"><i class="fas fa-tachometer-alt"></i></div>
+                        <h3>Dashboards e Decisões Rápidas</h3>
+                        <p>Transforme dados brutos em insights. Nossas plataformas oferecem relatórios em tempo real para que você tenha agilidade total na tomada de decisões.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="integracoes" class="integrations-section" data-header-theme="dark">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll fade-in-up">Ecossistema Conectado</h2>
+                <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Nossa tecnologia atua como um HUB central, conectando-se nativamente aos principais ERPs do mercado.</p>
+                
+                <div class="orbit-container animate-on-scroll fade-in-up delay-2">
+                    <div class="center-hub">
+                        <div class="hub-glow"></div>
+                        <img src="img/logo.png" alt="SCRYTA HUB" class="hub-logo">
+                    </div>
+
+                    <div class="orbit-item pos-1">
+                        <div class="orbit-circle"><i class="fas fa-database"></i></div>
+                        <span class="orbit-label">Domínio</span>
+                    </div>
+                    <div class="orbit-item pos-2">
+                        <div class="orbit-circle"><i class="fas fa-server"></i></div>
+                        <span class="orbit-label">Questor</span>
+                    </div>
+                    <div class="orbit-item pos-3">
+                        <div class="orbit-circle"><i class="fas fa-network-wired"></i></div>
+                        <span class="orbit-label">SCI</span>
+                    </div>
+                    <div class="orbit-item pos-4">
+                        <div class="orbit-circle"><i class="fas fa-cloud"></i></div>
+                        <span class="orbit-label">QYON</span>
+                    </div>
+                    <div class="orbit-item pos-5">
+                        <div class="orbit-circle"><i class="fas fa-laptop-code"></i></div>
+                        <span class="orbit-label">Prosoft</span>
+                    </div>
+                    <div class="orbit-item pos-6">
+                        <div class="orbit-circle"><i class="fas fa-terminal"></i></div>
+                        <span class="orbit-label">Alterdata</span>
+                    </div>
+                    <div class="orbit-item pos-7">
+                        <div class="orbit-circle"><i class="fas fa-cogs"></i></div>
+                        <span class="orbit-label">Outros</span>
+                    </div>
+                    <div class="orbit-item pos-8">
+                         <div class="orbit-circle"><i class="fas fa-plug"></i></div>
+                        <span class="orbit-label">APIs</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -152,39 +208,6 @@
             </div>
         </section>
 
-        <section id="especialistas" class="specialists-section" data-header-theme="dark">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll fade-in-up">Pare de perder tempo com tarefas manuais.</h2>
-                <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Nós criamos sistemas <strong>all-in-one em nuvem</strong> testados em nossa própria operação de larga escala. Trazemos <strong>agilidade de quem está na linha de frente</strong> para sua operação fiscal e contábil.</p>
-                <div class="specialists-grid">
-                    <div class="specialist-card animate-on-scroll fade-in-up">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-file-invoice-dollar"></i>
-                        </div>
-                        <h3>Automação Fiscal de Ponta a Ponta</h3>
-                        <p>Desde a captura de notas até a geração de guias como MIT e DCTFWeb. Nossos sistemas trabalham 24/7 para garantir conformidade total e zero retrabalho.</p>
-                    </div>
-                    <div class="specialist-card animate-on-scroll fade-in-up delay-1">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-plug"></i>
-                        </div>
-                        <h3>APIs e Sistemas All-in-One</h3>
-                        <p>Conectamos seu ERP (Domínio, Questor, SCI, QYON, entre outros) aos portais do governo e qualquer outra fonte de dados em um único sistema em nuvem. Rápido, ágil e sob medida para você.</p>
-                    </div>
-                    <div class="specialist-card animate-on-scroll fade-in-up delay-2">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        <h3>Dashboards e Decisões Rápidas</h3>
-                        <p>Transforme dados brutos em insights. Nossas plataformas oferecem relatórios em tempo real para que você tenha agilidade total na tomada de decisões.</p>
-                    </div>
-                </div>
-                <div class="cta-container animate-on-scroll fade-in-up">
-                    <a href="https://wa.me/5541987132156" target="_blank" rel="noopener noreferrer" class="cta-button">Solicite uma Avaliação Gratuita</a>
-                </div>
-            </div>
-        </section>
-
         <section id="projetos-destaque" class="featured-projects-section" data-header-theme="dark">
             <div class="container">
                 <h2 class="section-title animate-on-scroll fade-in-up">Automação Sob Medida. Performance Sem Limites.</h2>
@@ -212,66 +235,68 @@
             </div>
         </section>
 
-        <section id="automacoes" class="cases-section" data-header-theme="dark">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll fade-in-up">Automações</h2>
-                <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Soluções que possuímos e podem transformar a sua operação.</p>
-                <p class="section-description animate-on-scroll fade-in-up delay-1">Tecnologias, integrações e fluxos automatizados que já desenvolvemos e aplicamos em operações, prontos para adaptar à sua necessidade.</p>
-            </div>
-            <div class="carousel-container animate-on-scroll fade-in-up delay-2">
-                <div class="carousel-track">
-                    <div class="case-card">
-                        <i class="fas fa-calculator"></i>
-                        <h3>Simples Nacional</h3>
-                        <p>Auditoria automática, baixa de XML em lote, apontamento de diferenças do sistema contábil, entrega de PGDAS e DAS.</p>
+        <section id="automacoes" class="automations-slider-section" data-header-theme="dark">
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="slider-slide">
+                        <div class="slide-content animate-on-scroll fade-in-up">
+                            <i class="fas fa-calculator slide-icon"></i>
+                            <span class="slide-tag">Fiscal</span>
+                            <h2 class="slide-title">Simples Nacional</h2>
+                            <p class="slide-description">Auditoria automática, baixa de XML em lote, conferência com sistema contábil e entrega de PGDAS/DAS com um clique.</p>
+                            <a href="#contato" class="cta-button">Saiba Mais</a>
+                        </div>
                     </div>
-                    <div class="case-card">
-                        <i class="fas fa-users-cog"></i>
-                        <h3>Auditoria de Folha</h3>
-                        <p>Auditoria de empresas com pró-labore e folha de pagamento, realizando o cruzamento inteligente com o sistema contábil.</p>
+                    <div class="slider-slide">
+                        <div class="slide-content">
+                            <i class="fas fa-users-cog slide-icon"></i>
+                            <span class="slide-tag">DP</span>
+                            <h2 class="slide-title">Auditoria de Folha</h2>
+                            <p class="slide-description">Cruzamento inteligente de dados de pró-labore e folha de pagamento diretamente com seu sistema contábil. Zero erros.</p>
+                            <a href="#contato" class="cta-button">Saiba Mais</a>
+                        </div>
                     </div>
-                    <div class="case-card">
-                        <i class="fas fa-envelope-open-text"></i>
-                        <h3>Caixa Postal eCAC</h3>
-                        <p>Visualização centralizada e automática de mensagens, exportação de relatórios em lote e dashboard geral de compliance.</p>
+                    <div class="slider-slide">
+                        <div class="slide-content">
+                            <i class="fas fa-envelope-open-text slide-icon"></i>
+                            <span class="slide-tag">Federal</span>
+                            <h2 class="slide-title">Caixa Postal eCAC</h2>
+                            <p class="slide-description">Monitoramento 24/7. Visualização centralizada de mensagens, relatórios em lote e alertas automáticos de compliance.</p>
+                            <a href="#contato" class="cta-button">Saiba Mais</a>
+                        </div>
                     </div>
-                    <div class="case-card">
-                        <i class="fas fa-clock"></i>
-                        <h3>Apontamento de Horas</h3>
-                        <p>Realização de tarefas com cronometragem, acompanhamento de produtividade da equipe e individual por colaborador.</p>
+                    <div class="slider-slide">
+                        <div class="slide-content">
+                            <i class="fas fa-clock slide-icon"></i>
+                            <span class="slide-tag">Gestão</span>
+                            <h2 class="slide-title">Gestão de Tempo</h2>
+                            <p class="slide-description">Cronometragem precisa de tarefas, acompanhamento de produtividade real da equipe e dashboards de performance individual.</p>
+                            <a href="#contato" class="cta-button">Saiba Mais</a>
+                        </div>
                     </div>
-                    <div class="case-card">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <h3>Levantamento de Débitos</h3>
-                        <p>Relatório de pendências centralizadas (previdenciárias e federais) com visualização em lote e painel de controle unificado.</p>
+                    <div class="slider-slide">
+                        <div class="slide-content">
+                            <i class="fas fa-exclamation-triangle slide-icon"></i>
+                            <span class="slide-tag">Compliance</span>
+                            <h2 class="slide-title">Radar de Débitos</h2>
+                            <p class="slide-description">Varredura automática de pendências previdenciárias e federais. Painel de controle unificado para regularização proativa.</p>
+                            <a href="#contato" class="cta-button">Saiba Mais</a>
+                        </div>
                     </div>
-                    <div class="case-card">
-                        <i class="fas fa-calculator"></i>
-                        <h3>Simples Nacional</h3>
-                        <p>Auditoria automática, baixa de XML em lote, apontamento de diferenças do sistema contábil, entrega de PGDAS e DAS.</p>
-                    </div>
-                    <div class="case-card">
-                        <i class="fas fa-users-cog"></i>
-                        <h3>Auditoria de Folha</h3>
-                        <p>Auditoria de empresas com pró-labore e folha de pagamento, realizando o cruzamento inteligente com o sistema contábil.</p>
-                    </div>
-                    <div class="case-card">
-                        <i class="fas fa-envelope-open-text"></i>
-                        <h3>Caixa Postal eCAC</h3>
-                        <p>Visualização centralizada e automática de mensagens, exportação de relatórios em lote e dashboard geral de compliance.</p>
-                    </div>
-                    <div class="case-card">
-                        <i class="fas fa-clock"></i>
-                        <h3>Apontamento de Horas</h3>
-                        <p>Realização de tarefas com cronometragem, acompanhamento de produtividade da equipe e individual por colaborador.</p>
-                    </div>
-                    <div class="case-card">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <h3>Levantamento de Débitos</h3>
-                        <p>Relatório de pendências centralizadas (previdenciárias e federais) com visualização em lote e painel de controle unificado.</p>
+                    <div class="slider-slide">
+                        <div class="slide-content">
+                            <i class="fas fa-robot slide-icon"></i>
+                            <span class="slide-tag">Sob Medida</span>
+                            <h2 class="slide-title">Robôs Personalizados</h2>
+                            <p class="slide-description">Sua demanda específica transformada em um robô que trabalha para você 24 horas por dia, 7 dias por semana.</p>
+                            <a href="#contato" class="cta-button">Saiba Mais</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <button class="slider-arrow prev" id="slider-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-arrow next" id="slider-next"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots" id="slider-dots"></div>
         </section>
 
         <section id="zengatax" class="zengatax-section" data-header-theme="dark">
@@ -279,62 +304,33 @@
                 <div class="zengatax-content animate-on-scroll fade-in-left">
                     <h3 class="zenga-intro-subtitle">Visualize nossa solução All-in-One:</h3>
                     <h2 class="section-title">O futuro da contabilidade chegou, e não passa mais pelo eCAC!</h2>
-                    
                     <ul class="zenga-features">
                         <li><i class="fas fa-check-circle"></i> Criado para automatizar sua rotina.</li>
                         <li><i class="fas fa-check-circle"></i> Pensado para aumentar a eficiência operacional.</li>
                         <li><i class="fas fa-check-circle"></i> Adequado para sua empresa.</li>
                     </ul>
-                    
                     <a href="https://zengatax.com.br" target="_blank" rel="noopener noreferrer" class="cta-button-zenga">Conheça o ZengaTax</a>
                 </div>
                 <div class="zengatax-visual animate-on-scroll">
-                    
                     <div class="zengatax-flow-visual">
                         <div class="pills-container">
-                            <div class="flow-item input-1">
-                                <i class="fas fa-file-invoice"></i> MIT
-                            </div>
-                            <div class="flow-item input-2">
-                                <i class="fas fa-landmark"></i> DARF Previdenciário
-                            </div>
-                            <div class="flow-item input-3">
-                                <i class="fas fa-users"></i> Relatório de Pendências
-                            </div>
-                            <div class="flow-item output-1">
-                                <i class="fas fa-check-circle"></i> DCTFWeb
-                            </div>
-                            <div class="flow-item output-2">
-                                <i class="fas fa-file-invoice-dollar"></i> DARFs MIT
-                            </div>
-                            <div class="flow-item output-3">
-                                <i class="fas fa-chart-pie"></i> Recibos
-                            </div>
-                            <div class="flow-item input-1 set-2">
-                                <i class="fas fa-file-invoice"></i> MIT
-                            </div>
-                            <div class="flow-item input-2 set-2">
-                                <i class="fas fa-landmark"></i> DARF Previdenciário
-                            </div>
-                            <div class="flow-item input-3 set-2">
-                                <i class="fas fa-users"></i> Relatório de Pendências
-                            </div>
-                            <div class="flow-item output-1 set-2">
-                                <i class="fas fa-check-circle"></i> DCTFWeb
-                            </div>
-                            <div class="flow-item output-2 set-2">
-                                <i class="fas fa-file-invoice-dollar"></i> DARFs MIT
-                            </div>
-                            <div class="flow-item output-3 set-2">
-                                <i class="fas fa-chart-pie"></i> Recibos
-                            </div>
+                            <div class="flow-item input-1"><i class="fas fa-file-invoice"></i> MIT</div>
+                            <div class="flow-item input-2"><i class="fas fa-landmark"></i> DARF Previdenciário</div>
+                            <div class="flow-item input-3"><i class="fas fa-users"></i> Relatório de Pendências</div>
+                            <div class="flow-item output-1"><i class="fas fa-check-circle"></i> DCTFWeb</div>
+                            <div class="flow-item output-2"><i class="fas fa-file-invoice-dollar"></i> DARFs MIT</div>
+                            <div class="flow-item output-3"><i class="fas fa-chart-pie"></i> Recibos</div>
+                            <div class="flow-item input-1 set-2"><i class="fas fa-file-invoice"></i> MIT</div>
+                            <div class="flow-item input-2 set-2"><i class="fas fa-landmark"></i> DARF Previdenciário</div>
+                            <div class="flow-item input-3 set-2"><i class="fas fa-users"></i> Relatório de Pendências</div>
+                            <div class="flow-item output-1 set-2"><i class="fas fa-check-circle"></i> DCTFWeb</div>
+                            <div class="flow-item output-2 set-2"><i class="fas fa-file-invoice-dollar"></i> DARFs MIT</div>
+                            <div class="flow-item output-3 set-2"><i class="fas fa-chart-pie"></i> Recibos</div>
                         </div>
-        
                         <div class="flow-core">
                             <img src="img/zengatax-logo.png" alt="Logo ZengaTax" class="zengatax-mockup-logo">
                         </div>
                     </div>
-
                     <div class="zengatax-mockup">
                         <img src="img/zengatax-logo.png" alt="Logo ZengaTax" class="zengatax-mockup-logo">
                     </div>
@@ -343,7 +339,8 @@
         </section>
 
         <section id="blog" class="blog-invite-section" data-header-theme="dark">
-            <div class="blog-background-image animate-on-scroll"></div> <div class="container blog-invite-container">
+            <div class="blog-background-image animate-on-scroll"></div>
+            <div class="container blog-invite-container">
                 <div class="blog-invite-content animate-on-scroll fade-in-left">
                     <h2 class="section-title">Confira nosso Blog</h2>
                     <p class="section-subtitle">Acesse o blog do ZengaTax e fique por dentro das últimas novidades, artigos e insights sobre automação fiscal e contábil.</p>
@@ -351,7 +348,6 @@
                 </div>
             </div>
         </section>
-
 
         <section id="cta" class="cta-section" data-header-theme="light">
             <div class="container">
@@ -420,9 +416,7 @@
             <button class="modal-close" id="modal-close-button">&times;</button>
             <div class="modal-body modal-grid">
                 <div class="modal-text">
-                    
                     <img src="img/logo.png" alt="SCRYTA TECNOLOGIA" class="modal-logo">
-                    
                     <h2>Construa sua Solução Personalizada</h2>
                     <p>Cansado de processos manuais e planilhas? Nós criamos a automação inteligente que sua operação precisa, do zero.</p>
                     <a href="https://wa.me/5541987132156" target="_blank" rel="noopener noreferrer" class="cta-button modal-cta" id="modal-cta-button">Falar com Especialista</a>
@@ -438,7 +432,7 @@
         <div class="modal-content">
             <button class="modal-close" id="success-modal-close-button">&times;</button>
             <div class="modal-body" style="text-align: center;">
-                <div class_="" style="padding: 20px 0 0 0;">
+                <div style="padding: 20px 0 0 0;">
                     <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--dark-sage); margin-bottom: 25px;"></i>
                     <h2 style="font-size: 1.7rem; font-weight: 700; color: var(--black-soft); margin-bottom: 15px;">Mensagem Enviada!</h2>
                     <p style="font-size: 1rem; color: #333; margin-bottom: 30px;">Obrigado por entrar em contato. Responderemos em breve!</p>
@@ -447,32 +441,28 @@
             </div>
         </div>
     </div>
+
     <div id="chatbot-trigger">
         <i class="fas fa-comment-dots"></i>
     </div>
 
     <div id="chat-widget-container">
         <div class="chat-header">
-            <div class="chat-header-avatar">
-                <i class="fas fa-robot"></i>
-            </div>
+            <div class="chat-header-avatar"><i class="fas fa-robot"></i></div>
             <div class="chat-header-title">
                 <span>Assistente SCRYTA</span>
                 <span class="chat-status">Online</span>
             </div>
             <button id="chat-close-btn">&times;</button>
         </div>
-        <div id="chat-messages">
-        </div>
-        <div id="chat-pre-options">
-        </div>
+        <div id="chat-messages"></div>
+        <div id="chat-pre-options"></div>
         <div class="chat-input-area">
             <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
-            <button id="chat-send-btn">
-                <i class="fas fa-paper-plane"></i>
-            </button>
+            <button id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
+
     <script src="principal.js"></script>
     <script src="chatbot.js"></script>
 </body>

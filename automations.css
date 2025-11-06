@@ -1,0 +1,63 @@
+/* Automation Slider Section */
+.automations-slider-section {
+    padding: 0; height: 100vh; min-height: 700px; position: relative; overflow: hidden;
+    background-color: var(--black-soft); border-top: 1px solid rgba(107, 179, 155, 0.15); border-bottom: 1px solid rgba(107, 179, 155, 0.15);
+}
+.slider-container { width: 100%; height: 100%; position: relative; }
+.slider-track { display: flex; height: 100%; width: 100%; transition: transform 0.8s var(--smooth-curve); }
+.slider-slide {
+    flex-shrink: 0; width: 100%; height: 100%; padding: 80px 40px;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    position: relative; background-size: cover; background-position: center;
+}
+.slider-slide::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, transparent 30%, rgba(11, 11, 13, 0.9) 80%),
+                radial-gradient(circle at center, rgba(107, 179, 155, 0.1) 0%, transparent 70%);
+    z-index: 1;
+}
+.slide-content {
+    position: relative; z-index: 2; max-width: 650px; opacity: 0; transform: translateY(30px);
+    transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
+.slider-slide.active .slide-content { opacity: 1; transform: translateY(0); }
+.slide-icon {
+    font-size: 4rem; margin-bottom: 25px; background: linear-gradient(135deg, var(--mint-green), var(--dark-sage));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;
+    filter: drop-shadow(0 5px 20px rgba(107, 179, 155, 0.4));
+}
+.slide-tag {
+    display: block; margin: 0 auto 15px; width: fit-content; padding: 6px 14px; background: rgba(107, 179, 155, 0.1);
+    color: var(--mint-green); border-radius: 50px; font-size: 0.8rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(107, 179, 155, 0.3);
+}
+.slide-title { font-size: 3.0rem; font-weight: 700; color: var(--cream-white); margin-bottom: 20px; }
+.slide-description { font-size: 1.1rem; color: rgba(247, 244, 232, 0.8); line-height: 1.7; margin-bottom: 40px; }
+.slider-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2); color: var(--cream-white); border-radius: 50%; width: 50px; height: 50px;
+    font-size: 1.2rem; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(5px);
+}
+.slider-arrow:hover { background: var(--dark-sage); color: var(--black-soft); border-color: var(--dark-sage); transform: translateY(-50%) scale(1.1); }
+.slider-arrow.hidden { opacity: 0.3; pointer-events: none; cursor: default; }
+.slider-arrow.prev { left: 30px; }
+.slider-arrow.next { right: 30px; }
+.slider-dots {
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 12px;
+}
+.slider-dot {
+    width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.3); border: none; cursor: pointer; padding: 0; transition: all 0.3s ease;
+}
+.slider-dot:hover { background: rgba(255, 255, 255, 0.7); }
+.slider-dot.active { background: var(--mint-green); transform: scale(1.1); box-shadow: 0 0 10px rgba(133, 230, 192, 0.5); }
+
+/* Automation Media Queries */
+@media (max-width: 900px) {
+    .automations-slider-section { height: auto; min-height: 80vh; }
+    .slider-slide { padding: 60px 25px; }
+    .slide-title { font-size: 2.2rem; }
+    .slide-description { font-size: 1rem; }
+    .slider-arrow { width: 40px; height: 40px; font-size: 1rem; }
+    .slider-arrow.prev { left: 15px; }
+    .slider-arrow.next { right: 15px; }
+}

@@ -726,93 +726,216 @@ section {
     to { transform: rotate(360deg); }
 }
 
-.cases-section {
-    background-color: var(--black-soft);
-    padding: 80px 0;
-    border-top: 1px solid rgba(107, 179, 155, 0.2);
-    border-bottom: 1px solid rgba(107, 179, 155, 0.2);
-}
-
-.section-description {
-    text-align: center;
-    font-size: 1rem;
-    color: var(--light-green);
-    max-width: 700px;
-    margin: -30px auto 50px;
-    font-weight: 300;
-    opacity: 0.9;
-    line-height: 1.7;
-}
-
-.carousel-container {
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: visible;
-    position: relative;
-    margin-top: 30px;
-    padding: 20px 0;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-}
-
-.carousel-track {
-    display: flex;
-    width: calc(350px * 10);
-    animation: scroll 40s linear infinite;
-}
-
-.case-card {
-    flex-shrink: 0;
-    width: 350px;
+/* === NOVA SEÇÃO DE INTEGRAÇÕES === */
+.integrations-section {
     background-color: var(--black-medium);
-    border-radius: 16px;
-    padding: 30px;
-    margin: 0 15px;
-    border: 1px solid rgba(107, 179, 155, 0.3);
+    padding: 90px 0;
+    text-align: center;
+}
+
+.integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.integration-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(107, 179, 155, 0.2);
+    border-radius: 12px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: all 0.4s var(--smooth-curve);
+    height: 120px;
+    position: relative;
+}
+
+.integration-card:hover {
+    background: rgba(107, 179, 155, 0.08);
+    border-color: var(--mint-green);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.integration-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--cream-white);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.integration-card:hover .integration-name {
+    opacity: 1;
+    color: var(--mint-green);
+}
+
+.integration-card.scryta-hub {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    grid-column: span 2; /* Ocupa 2 colunas no centro */
+    grid-row: span 2;    /* Ocupa 2 linhas */
+    height: auto;
+    padding: 0;
+}
+
+.integration-card.scryta-hub:hover {
+    transform: none;
+    background: transparent;
+}
+
+.hub-logo {
+    max-width: 220px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(107, 179, 155, 0.3));
+    animation: pulse-hub 3s infinite ease-in-out;
+}
+
+@keyframes pulse-hub {
+    0%, 100% { filter: drop-shadow(0 0 20px rgba(107, 179, 155, 0.3)); transform: scale(1); }
+    50% { filter: drop-shadow(0 0 35px rgba(133, 230, 192, 0.5)); transform: scale(1.05); }
+}
+
+.generic-erp i {
+    font-size: 1.5rem;
+    color: var(--dark-sage);
+    margin-bottom: 10px;
+}
+
+/* Ajuste da grade para centralizar o hub */
+.integrations-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 150px); /* Altura fixa para as linhas */
+}
+
+/* Posicionamento específico dos cards ao redor do hub */
+.integrations-grid > :nth-child(1) { grid-area: 1 / 1 / 2 / 2; } /* Domínio: Linha 1, Col 1 */
+.integrations-grid > :nth-child(2) { grid-area: 1 / 4 / 2 / 5; } /* Questor: Linha 1, Col 4 */
+.integrations-grid > :nth-child(3) { grid-area: 1 / 2 / 3 / 4; } /* HUB CENTRAL: Linhas 1-2, Cols 2-3 */
+.integrations-grid > :nth-child(4) { grid-area: 2 / 1 / 3 / 2; } /* SCI: Linha 2, Col 1 */
+.integrations-grid > :nth-child(5) { grid-area: 2 / 4 / 3 / 5; } /* QYON: Linha 2, Col 4 */
+/* Cards extras abaixo se necessário, ou escondidos em mobile */
+.integrations-grid > :nth-child(6) { display: none; } 
+.integrations-grid > :nth-child(7) { display: none; }
+.integrations-grid > :nth-child(8) { display: none; }
+
+/* === FIM SEÇÃO INTEGRAÇÕES === */
+
+
+/* === NOVA SEÇÃO DE AUTOMAÇÕES (Substitui .cases-section) === */
+.automations-showcase-section {
+    background-color: var(--black-soft);
+    padding: 100px 0;
+    border-top: 1px solid rgba(107, 179, 155, 0.15);
+    border-bottom: 1px solid rgba(107, 179, 155, 0.15);
+    background-image: radial-gradient(circle at top right, rgba(107, 179, 155, 0.05) 0%, transparent 40%),
+                      radial-gradient(circle at bottom left, rgba(107, 179, 155, 0.05) 0%, transparent 40%);
+}
+
+.automations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas no desktop */
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.automation-card-premium {
+    background: rgba(15, 15, 18, 0.6); /* Fundo semi-transparente */
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s var(--smooth-curve);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(133, 230, 192, 0.4), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.automation-card-premium:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: rgba(133, 230, 192, 0.3);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+}
+
+.automation-card-premium:hover .card-glow {
+    opacity: 0.15;
+}
+
+.card-content {
+    padding: 35px 30px;
     position: relative;
     z-index: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.carousel-container:hover .carousel-track {
-    animation-play-state: paused;
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, var(--mint-green), var(--dark-sage));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    filter: drop-shadow(0 5px 15px rgba(107, 179, 155, 0.3));
+    transition: all 0.5s ease;
 }
 
-.case-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    border-color: var(--mint-green);
-    box-shadow: 0 15px 40px rgba(133, 230, 192, 0.1);
-    z-index: 10;
+.automation-card-premium:hover .card-icon {
+    transform: scale(1.1) rotate(-5deg);
+    filter: drop-shadow(0 8px 20px rgba(133, 230, 192, 0.5));
 }
 
-.case-card i {
-    font-size: 2.5rem;
-    color: var(--dark-sage);
-    margin-bottom: 20px;
-}
-
-.case-card h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: var(--light-green);
-}
-
-.case-card p {
+.automation-card-premium h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--cream-white);
-    opacity: 0.8;
-    line-height: 1.7;
-    font-size: 0.9rem;
+    margin-bottom: 15px;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-380px * 5));
-    }
+.automation-card-premium p {
+    color: rgba(247, 244, 232, 0.7);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
 }
+
+.card-tag {
+    align-self: flex-start;
+    padding: 6px 14px;
+    background: rgba(107, 179, 155, 0.1);
+    color: var(--mint-green);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(107, 179, 155, 0.3);
+}
+
+/* === FIM SEÇÃO AUTOMAÇÕES === */
 
 .zengatax-section {
     background-color: var(--zenga-blue);
@@ -1481,23 +1604,38 @@ footer p {
         background: radial-gradient(circle at 50% 0%, rgba(133, 230, 192, 0.15) 0%, rgba(133, 230, 192, 0) 60%);
     }
 
-    .case-card {
-        width: 300px;
-        margin: 0 10px;
+    /* Ajustes Mobile para Integrações */
+    .integrations-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no mobile */
+        grid-template-rows: auto; /* Altura automática */
+        gap: 20px;
     }
-
-    .carousel-track {
-        width: calc(320px * 10);
-        animation: scroll-mobile 40s linear infinite;
+    /* Redefine as posições para fluxo normal no mobile, mantendo o hub no topo ou meio */
+    .integrations-grid > :nth-child(1) { grid-area: auto; }
+    .integrations-grid > :nth-child(2) { grid-area: auto; }
+    .integration-card.scryta-hub {
+        grid-column: span 2; /* Ocupa toda a largura no topo */
+        order: -1; /* Move para o primeiro lugar visualmente */
+        margin-bottom: 20px;
     }
+    .integrations-grid > :nth-child(4) { grid-area: auto; }
+    .integrations-grid > :nth-child(5) { grid-area: auto; }
+    /* Mostra os extras no mobile para preencher a grade se quiser */
+    .integrations-grid > :nth-child(6) { display: flex; grid-area: auto; } 
+    .integrations-grid > :nth-child(7) { display: flex; grid-area: auto; }
+    .integrations-grid > :nth-child(8) { display: flex; grid-area: auto; }
 
-    @keyframes scroll-mobile {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(calc(-320px * 5));
-        }
+
+    /* Ajustes Mobile para Automações */
+    .automations-grid {
+        grid-template-columns: 1fr; /* 1 coluna no mobile */
+        gap: 25px;
+    }
+    .automation-card-premium {
+        min-height: auto; /* Remove altura forçada no mobile */
+    }
+    .automation-card-premium:hover {
+        transform: translateY(-5px) scale(1.01); /* Menor movimento no mobile */
     }
 
 
@@ -1533,11 +1671,7 @@ footer p {
         align-self: center;
     }
 
-    /* === FIX: Removido 'display: none' para mostrar balões no mobile === */
-    /* .zengatax-flow-visual { display: none; } */
-    /* .zengatax-mockup { display: flex; } */
-    .zengatax-mockup { display: none; } /* Oculta o fallback e mantém a animação */
-
+    .zengatax-mockup { display: none; } 
 
     .blog-invite-container {
         flex-direction: column; 
@@ -1607,11 +1741,9 @@ footer p {
         text-align: center;
     }
 
-    /* === FIX: Removido 'display: none' para mostrar imagem do modal no mobile === */
     .modal-visual-container {
-        /* display: none; */
-        display: flex; /* Garantir que apareça */
-        margin-top: 20px; /* Adicionar espaço */
+        display: flex; 
+        margin-top: 20px; 
     }
 
 }
@@ -1630,11 +1762,7 @@ footer p {
         display: none;
     }
     
-    /* === FIX: Removido 'display: none' para mostrar balões no mobile === */
-    /* .zengatax-flow-visual { display: none; } */
-    /* .zengatax-mockup { display: flex; } */
-    .zengatax-mockup { display: none; } /* Oculta o fallback e mantém a animação */
-
+    .zengatax-mockup { display: none; } 
 
     .modal-content {
         padding: 30px 25px;
@@ -1662,9 +1790,6 @@ footer p {
     margin-left: -30px;
 }
 
-/* === FIX: Adicionando definições de animação ausentes === */
-
-/* Estado inicial (oculto) para todos os elementos .animate-on-scroll */
 .animate-on-scroll {
     opacity: 0;
     transition: opacity 0.8s var(--smooth-curve), transform 0.8s var(--smooth-curve);
@@ -1682,19 +1807,16 @@ footer p {
     transform: translateX(30px);
 }
 
-/* Estado final (visível) quando a classe .is-visible é adicionada */
 .animate-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0) translateX(0);
 }
 
-/* Delays (baseado no HTML do usuário, ex: delay-1, delay-2) */
 .animate-on-scroll.delay-1 { transition-delay: 0.2s; }
 .animate-on-scroll.delay-2 { transition-delay: 0.4s; }
 .animate-on-scroll.delay-3 { transition-delay: 0.6s; }
 .animate-on-scroll.delay-4 { transition-delay: 0.8s; }
 
-/* Animações de carregamento da hero (não usam .is-visible) */
 .animate-on-load {
     opacity: 0;
     transform: translateY(20px);
@@ -1709,4 +1831,3 @@ footer p {
         transform: translateY(0);
     }
 }
-/* === FIM DO FIX === */

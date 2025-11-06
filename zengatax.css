@@ -1,0 +1,66 @@
+/* ZengaTax Section */
+.zengatax-section { background-color: var(--zenga-blue); padding: 90px 0; color: var(--cream-white); }
+.zenga-intro-subtitle {
+    font-size: 1.1rem; font-weight: 600; color: var(--mint-green); text-align: left;
+    margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;
+}
+.zengatax-section .section-title { text-align: left; margin-bottom: 30px; color: var(--cream-white); font-size: 3.0rem; line-height: 1.3; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+.zengatax-container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
+.zengatax-content { display: flex; flex-direction: column; justify-content: center; }
+.zenga-features { list-style: none; padding: 0; margin-bottom: 40px; max-width: 500px; }
+.zenga-features li { display: flex; align-items: center; font-size: 1.1rem; font-weight: 500; color: var(--cream-white); opacity: 0.9; margin-bottom: 15px; }
+.zenga-features li i { color: var(--mint-green); font-size: 1.2rem; margin-right: 15px; }
+.cta-button-zenga {
+    display: inline-block; padding: 12px 30px; border-radius: 50px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; background: var(--cream-white); color: var(--zenga-blue); border: 2px solid var(--cream-white);
+    transition: all 0.4s var(--smooth-curve); box-shadow: 0 4px 20px rgba(255,255,255,0.2); align-self: flex-start;
+}
+.cta-button-zenga:hover { background: transparent; color: var(--cream-white); transform: translateY(-5px); box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3); }
+.zengatax-visual { position: relative; }
+.zengatax-flow-visual { position: relative; min-height: 400px; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+.pills-container {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5;
+    -webkit-mask-image: radial-gradient(ellipse 50% 60% at 50% 50%, transparent 35%, black 100%);
+    mask-image: radial-gradient(ellipse 50% 60% at 50% 50%, transparent 35%, black 100%);
+}
+@keyframes zenga-pulse {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.35)); }
+    50% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.55)); }
+}
+.flow-core { position: relative; width: 270px; height: 270px; background-color: transparent; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 10; }
+.zengatax-mockup-logo { max-width: 100%; max-height: 100%; opacity: 1; filter: none; animation: zenga-pulse 3s infinite ease-in-out; }
+@keyframes float { from { transform: translateX(-150%); } to { transform: translateX(150vw); } }
+.flow-item {
+    position: absolute; display: flex; align-items: center; gap: 8px; padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: var(--cream-white);
+    border-radius: 50px; backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+    font-weight: 600; font-size: 0.9rem; box-shadow: 0 0 15px rgba(133, 230, 192, 0.1); animation: float 20s linear infinite;
+}
+.flow-item i { font-size: 1rem; color: var(--cream-white); }
+.flow-item.input-1 { top: 10%; animation-duration: 25s; animation-delay: 0s; z-index: 1; }
+.flow-item.input-2 { top: 45%; animation-duration: 18s; animation-delay: -8s; z-index: 2; }
+.flow-item.input-3 { top: 80%; animation-duration: 28s; animation-delay: -2s; z-index: 3; }
+.flow-item.output-1 { top: 15%; animation-duration: 20s; animation-delay: -4s; z-index: 4; }
+.flow-item.output-2 { top: 50%; animation-duration: 22s; animation-delay: -12s; z-index: 5; }
+.flow-item.output-3 { top: 75%; animation-duration: 16s; animation-delay: -6s; z-index: 6; }
+.flow-item.input-1.set-2 { top: 20%; animation-duration: 26s; animation-delay: -13s; z-index: 7; }
+.flow-item.input-2.set-2 { top: 60%; animation-duration: 19s; animation-delay: -3s; z-index: 8; }
+.flow-item.input-3.set-2 { top: 90%; animation-duration: 29s; animation-delay: -10s; z-index: 9; }
+.flow-item.output-1.set-2 { top: 25%; animation-duration: 21s; animation-delay: -15s; z-index: 10; }
+.flow-item.output-2.set-2 { top: 65%; animation-duration: 23s; animation-delay: -1s; z-index: 11; }
+.flow-item.output-3.set-2 { top: 85%; animation-duration: 17s; animation-delay: -11s; z-index: 12; }
+.zengatax-mockup { display: none; width: 100%; max-width: 550px; height: 420px; justify-content: center; align-items: center; padding: 20px; }
+
+/* Zenga Media Queries */
+@media (max-width: 900px) {
+    .zengatax-container { grid-template-columns: 1fr; text-align: center; }
+    .zenga-intro-subtitle, .zengatax-section .section-title { text-align: center; }
+    .zengatax-section .section-title { font-size: 2.2rem; }
+    .zengatax-content { order: 2; } .zengatax-visual { order: 1; margin-bottom: 40px; }
+    .zengatax-content p, .zenga-features { margin-left: auto; margin-right: auto; }
+    .zenga-features { max-width: 350px; text-align: left; }
+    .zengatax-content .cta-button-zenga { align-self: center; }
+}
+@media (max-width: 768px) {
+    .zengatax-mockup { display: none; }
+}
