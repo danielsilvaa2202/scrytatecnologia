@@ -1,4 +1,3 @@
-/* ZengaTax Section */
 .zengatax-section { background-color: var(--zenga-blue); padding: 90px 0; color: var(--cream-white); }
 .zenga-intro-subtitle {
     font-size: 1.1rem; font-weight: 600; color: var(--mint-green); text-align: left;
@@ -50,8 +49,6 @@
 .flow-item.output-2.set-2 { top: 65%; animation-duration: 23s; animation-delay: -1s; z-index: 11; }
 .flow-item.output-3.set-2 { top: 85%; animation-duration: 17s; animation-delay: -11s; z-index: 12; }
 .zengatax-mockup { display: none; width: 100%; max-width: 550px; height: 420px; justify-content: center; align-items: center; padding: 20px; }
-
-/* Zenga Media Queries */
 @media (max-width: 900px) {
     .zengatax-container { grid-template-columns: 1fr; text-align: center; }
     .zenga-intro-subtitle, .zengatax-section .section-title { text-align: center; }

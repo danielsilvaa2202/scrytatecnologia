@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCRYTA TECNOLOGIA - Soluções Premium em Automação</title>
-    
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
     <link rel="shortcut icon" href="img/favicons/favicon.ico">
     <meta name="theme-color" content="#0b0b0d">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="sections.css">
     <link rel="stylesheet" href="integrations.css">
@@ -23,12 +20,9 @@
     <link rel="stylesheet" href="zengatax.css">
     <link rel="stylesheet" href="modals.css">
     <link rel="stylesheet" href="chatbot.css">
-
 </head>
 <body>
-
     <div id="preloader"></div>
-
     <header id="main-header">
         <div class="container">
             <a href="#hero" class="logo-link">
@@ -53,7 +47,6 @@
             </button>
         </div>
     </header>
-
     <div id="mobile-nav-container" class="mobile-nav-container">
         <nav class="mobile-nav">
             <ul>
@@ -68,7 +61,6 @@
             </ul>
         </nav>
     </div>
-
     <main>
         <section id="hero" class="hero-section" data-header-theme="light">
             <canvas id="hero-canvas"></canvas>
@@ -80,7 +72,6 @@
                 </div>
             </div>
         </section>
-
         <section id="sobre-nos" class="about-section" data-header-theme="light">
             <div class="container about-grid">
                 <div class="about-content animate-on-scroll fade-in-left">
@@ -103,7 +94,6 @@
                 </div>
             </div>
         </section>
-
         <section id="especialistas" class="specialists-section" data-header-theme="dark">
             <div class="container">
                 <h2 class="section-title animate-on-scroll fade-in-up">Pare de perder tempo com tarefas manuais.</h2>
@@ -127,18 +117,14 @@
                 </div>
             </div>
         </section>
-
         <section id="integracoes" class="integrations-section" data-header-theme="dark">
             <div class="container">
                 <h2 class="section-title animate-on-scroll fade-in-up">Ecossistema Conectado</h2>
                 <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Nossa tecnologia atua como um HUB central, conectando-se nativamente aos principais ERPs do mercado.</p>
-                
                 <div class="orbit-container animate-on-scroll fade-in-up delay-2">
                     <div class="center-hub">
-                        <div class="hub-glow"></div>
                         <img src="img/logo.png" alt="SCRYTA HUB" class="hub-logo">
                     </div>
-
                     <div class="orbit-item pos-1">
                         <div class="orbit-circle"><i class="fas fa-database"></i></div>
                         <span class="orbit-label">Domínio</span>
@@ -172,10 +158,8 @@
                         <span class="orbit-label">APIs</span>
                     </div>
                 </div>
-
             </div>
         </section>
-
         <section id="abordagem" class="approach-section" data-header-theme="dark">
             <div class="container">
                 <h2 class="section-title animate-on-scroll fade-in-up">Nossa Abordagem Única</h2>
@@ -207,7 +191,6 @@
                 </div>
             </div>
         </section>
-
         <section id="projetos-destaque" class="featured-projects-section" data-header-theme="dark">
             <div class="container">
                 <h2 class="section-title animate-on-scroll fade-in-up">Automação Sob Medida. Performance Sem Limites.</h2>
@@ -234,59 +217,76 @@
                 </div>
             </div>
         </section>
-
         <section id="automacoes" class="automations-slider-section" data-header-theme="dark">
             <div class="slider-container">
                 <div class="slider-track">
-                    <div class="slider-slide">
-                        <div class="slide-content animate-on-scroll fade-in-up">
-                            <i class="fas fa-calculator slide-icon"></i>
-                            <span class="slide-tag">Fiscal</span>
+                    <div class="slider-slide slide-fiscal">
+                        <div class="slide-background-anim"></div>
+                        <div class="slide-content">
+                            <div class="icon-container">
+                                <i class="fas fa-calculator slide-icon"></i>
+                                <span class="slide-label">Fiscal</span>
+                            </div>
                             <h2 class="slide-title">Simples Nacional</h2>
                             <p class="slide-description">Auditoria automática, baixa de XML em lote, conferência com sistema contábil e entrega de PGDAS/DAS com um clique.</p>
                             <a href="#contato" class="cta-button">Saiba Mais</a>
                         </div>
                     </div>
-                    <div class="slider-slide">
+                    <div class="slider-slide slide-dp">
+                        <div class="slide-background-anim"></div>
                         <div class="slide-content">
-                            <i class="fas fa-users-cog slide-icon"></i>
-                            <span class="slide-tag">DP</span>
+                            <div class="icon-container">
+                                <i class="fas fa-users-cog slide-icon"></i>
+                                <span class="slide-label">DP</span>
+                            </div>
                             <h2 class="slide-title">Auditoria de Folha</h2>
                             <p class="slide-description">Cruzamento inteligente de dados de pró-labore e folha de pagamento diretamente com seu sistema contábil. Zero erros.</p>
                             <a href="#contato" class="cta-button">Saiba Mais</a>
                         </div>
                     </div>
-                    <div class="slider-slide">
+                    <div class="slider-slide slide-federal">
+                        <div class="slide-background-anim"></div>
                         <div class="slide-content">
-                            <i class="fas fa-envelope-open-text slide-icon"></i>
-                            <span class="slide-tag">Federal</span>
+                            <div class="icon-container">
+                                <i class="fas fa-envelope-open-text slide-icon"></i>
+                                <span class="slide-label">Federal</span>
+                            </div>
                             <h2 class="slide-title">Caixa Postal eCAC</h2>
                             <p class="slide-description">Monitoramento 24/7. Visualização centralizada de mensagens, relatórios em lote e alertas automáticos de compliance.</p>
                             <a href="#contato" class="cta-button">Saiba Mais</a>
                         </div>
                     </div>
-                    <div class="slider-slide">
+                    <div class="slider-slide slide-gestao">
+                        <div class="slide-background-anim"></div>
                         <div class="slide-content">
-                            <i class="fas fa-clock slide-icon"></i>
-                            <span class="slide-tag">Gestão</span>
+                            <div class="icon-container">
+                                <i class="fas fa-clock slide-icon"></i>
+                                <span class="slide-label">Gestão</span>
+                            </div>
                             <h2 class="slide-title">Gestão de Tempo</h2>
                             <p class="slide-description">Cronometragem precisa de tarefas, acompanhamento de produtividade real da equipe e dashboards de performance individual.</p>
                             <a href="#contato" class="cta-button">Saiba Mais</a>
                         </div>
                     </div>
-                    <div class="slider-slide">
+                    <div class="slider-slide slide-compliance">
+                        <div class="slide-background-anim"></div>
                         <div class="slide-content">
-                            <i class="fas fa-exclamation-triangle slide-icon"></i>
-                            <span class="slide-tag">Compliance</span>
+                            <div class="icon-container">
+                                <i class="fas fa-exclamation-triangle slide-icon"></i>
+                                <span class="slide-label">Compliance</span>
+                            </div>
                             <h2 class="slide-title">Radar de Débitos</h2>
                             <p class="slide-description">Varredura automática de pendências previdenciárias e federais. Painel de controle unificado para regularização proativa.</p>
                             <a href="#contato" class="cta-button">Saiba Mais</a>
                         </div>
                     </div>
-                    <div class="slider-slide">
+                    <div class="slider-slide slide-custom">
+                        <div class="slide-background-anim"></div>
                         <div class="slide-content">
-                            <i class="fas fa-robot slide-icon"></i>
-                            <span class="slide-tag">Sob Medida</span>
+                            <div class="icon-container">
+                                <i class="fas fa-robot slide-icon"></i>
+                                <span class="slide-label">Sob Medida</span>
+                            </div>
                             <h2 class="slide-title">Robôs Personalizados</h2>
                             <p class="slide-description">Sua demanda específica transformada em um robô que trabalha para você 24 horas por dia, 7 dias por semana.</p>
                             <a href="#contato" class="cta-button">Saiba Mais</a>
@@ -294,11 +294,14 @@
                     </div>
                 </div>
             </div>
-            <button class="slider-arrow prev" id="slider-prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-arrow next" id="slider-next"><i class="fas fa-chevron-right"></i></button>
+            <button class="slider-arrow prev" id="slider-prev" aria-label="Slide anterior">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button class="slider-arrow next" id="slider-next" aria-label="Próximo slide">
+                <i class="fas fa-arrow-right"></i>
+            </button>
             <div class="slider-dots" id="slider-dots"></div>
         </section>
-
         <section id="zengatax" class="zengatax-section" data-header-theme="dark">
             <div class="container zengatax-container">
                 <div class="zengatax-content animate-on-scroll fade-in-left">
@@ -337,7 +340,6 @@
                 </div>
             </div>
         </section>
-
         <section id="blog" class="blog-invite-section" data-header-theme="dark">
             <div class="blog-background-image animate-on-scroll"></div>
             <div class="container blog-invite-container">
@@ -348,7 +350,6 @@
                 </div>
             </div>
         </section>
-
         <section id="cta" class="cta-section" data-header-theme="light">
             <div class="container">
                 <h2>Sua Contabilidade na Próxima Geração</h2>
@@ -356,7 +357,6 @@
                 <a href="#contato" class="cta-button-secondary">Inicie sua Transformação</a>
             </div>
         </section>
-        
         <section id="contato" class="contact-section" data-header-theme="light">
             <div class="container contact-grid">
                 <div class="contact-info animate-on-scroll fade-in-left">
@@ -367,7 +367,6 @@
                         <p><i class="fas fa-phone"></i> (41) 98713-2156</p>
                     </div>
                 </div>
-
                 <form name="contact" method="POST" data-netlify="true" class="contact-form animate-on-scroll fade-in-up delay-2">
                     <input type="hidden" name="form-name" value="contact" />
                     <div class="form-group-minimal">
@@ -386,9 +385,7 @@
                 </form>
             </div>
         </section>
-
     </main>
-
     <footer class="animate-on-scroll fade-in-up">
         <div class="container">
             <div class="footer-partners">
@@ -398,7 +395,6 @@
                 <img src="img/zenga.png" alt="Logo Zenga" class="logo-footer">
                 <img src="img/cwbstartups.png" alt="Logo CWB Startups" class="logo-footer">
             </div>
-            
             <div class="footer-links">
                 <a href="#">Privacidade</a>
                 <a href="#">Termos de Uso</a>
@@ -410,7 +406,6 @@
             <p>&copy; 2025 SCRYTA TECNOLOGIA. Todos os direitos reservados.</p>
         </div>
     </footer>
-
     <div id="popup-modal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close" id="modal-close-button">&times;</button>
@@ -427,7 +422,6 @@
             </div>
         </div>
     </div>
-
     <div id="success-modal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close" id="success-modal-close-button">&times;</button>
@@ -441,11 +435,9 @@
             </div>
         </div>
     </div>
-
     <div id="chatbot-trigger">
         <i class="fas fa-comment-dots"></i>
     </div>
-
     <div id="chat-widget-container">
         <div class="chat-header">
             <div class="chat-header-avatar"><i class="fas fa-robot"></i></div>
@@ -462,7 +454,6 @@
             <button id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
-
     <script src="principal.js"></script>
     <script src="chatbot.js"></script>
 </body>

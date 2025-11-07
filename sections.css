@@ -1,4 +1,3 @@
-/* Hero Section */
 .hero-section {
     height: 100vh; min-height: 650px; display: flex; align-items: center; justify-content: center;
     text-align: center; position: relative; overflow: hidden; padding-top: 0; background-color: var(--cream-white);
@@ -8,7 +7,6 @@
 .hero-logo { max-width: 400px; width: 100%; height: auto; margin-bottom: 15px; filter: none; }
 .hero-content .hero-subtitle { font-size: 1.3rem; max-width: 800px; margin: 0 auto 30px; color: var(--black-soft); font-weight: 400; }
 
-/* About Section */
 .about-section { background-color: var(--cream-white); color: var(--black-soft); padding: 90px 0; }
 .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; }
 .about-content .section-title { text-align: left; color: var(--black-soft); margin-bottom: 20px; }
@@ -18,7 +16,6 @@
 .about-visual-logo { width: 100%; max-width: 170px; height: auto; opacity: 0; transform: translateX(-20px); transition: all 0.6s var(--smooth-curve) 1.4s; justify-self: center; }
 .animate-on-scroll.is-visible .about-visual-logo { opacity: 1; transform: translateX(0); }
 
-/* DNA Animation */
 .dna-container { position: relative; min-height: 400px; display: flex; align-items: center; justify-content: center; }
 @keyframes pulse-glow {
     0%, 100% { box-shadow: 0 0 15px rgba(107, 179, 155, 0.3); }
@@ -46,7 +43,6 @@
 .animate-on-scroll.is-visible .node-3 { transition-delay: 0.6s; } .animate-on-scroll.is-visible .node-4 { transition-delay: 0.8s; }
 .animate-on-scroll.is-visible .node-5 { transition-delay: 1.0s; } .animate-on-scroll.is-visible .node-6 { transition-delay: 1.2s; }
 
-/* Approach Section */
 .approach-section { background-color: var(--black-soft); color: var(--cream-white); border-top: 1px solid rgba(107, 179, 155, 0.2); border-bottom: 1px solid rgba(107, 179, 155, 0.2); }
 .approach-section .section-title { color: var(--cream-white); }
 .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
@@ -66,7 +62,6 @@
 .approach-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; color: var(--light-green); }
 .approach-card p { color: var(--cream-white); opacity: 0.8; }
 
-/* Specialists Section */
 .specialists-section { background-color: var(--black-soft); }
 .specialists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 .specialist-card {
@@ -83,7 +78,6 @@
 .specialist-card h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: var(--light-green); }
 .specialist-card p { color: var(--cream-white); opacity: 0.8; line-height: 1.7; }
 
-/* Featured Projects Section */
 .featured-projects-section { background-color: var(--black-medium); border-top: 1px solid rgba(107, 179, 155, 0.2); padding: 90px 0; }
 .featured-projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-top: 50px; }
 .featured-project-content h3 { font-size: 1.8rem; font-weight: 600; color: var(--mint-green); margin-bottom: 25px; }
@@ -93,16 +87,18 @@
 .featured-project-features li i { color: var(--dark-sage); font-size: 1.1rem; margin-right: 15px; }
 .featured-project-visual { display: flex; align-items: center; justify-content: center; min-height: 350px; position: relative; }
 .visual-blueprint { position: relative; z-index: 1; width: 250px; height: 250px; display: flex; align-items: center; justify-content: center; }
-.visual-blueprint i { position: absolute; color: var(--dark-sage); opacity: 0.3; transition: all 0.6s var(--smooth-curve); }
-.visual-blueprint .layer-1 { font-size: 14rem; opacity: 0.1; transform: rotate(-15deg); }
-.visual-blueprint .layer-2 { font-size: 9rem; color: var(--mint-green); opacity: 0.3; animation: spin 15s linear infinite; }
-.visual-blueprint .layer-3 { font-size: 5rem; color: var(--cream-white); opacity: 1; filter: drop-shadow(0 0 15px var(--mint-green)); }
-.featured-projects-section .is-visible .visual-blueprint .layer-1 { transform: rotate(0deg) scale(1.1); opacity: 0.15; }
-.featured-projects-section .is-visible .visual-blueprint .layer-2 { opacity: 0.4; }
-.featured-projects-section .is-visible .visual-blueprint .layer-3 { transform: scale(1.2); }
-@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.visual-blueprint i { position: absolute; color: var(--dark-sage); opacity: 0.3; transition: all 2s var(--smooth-curve); }
+.visual-blueprint .layer-1 { font-size: 14rem; opacity: 0.05; transform: rotate(-3deg) scale(0.98); }
+.featured-projects-section .is-visible .visual-blueprint .layer-1 { transform: rotate(0deg) scale(1); opacity: 0.1; }
+.visual-blueprint .layer-2 { font-size: 9rem; color: var(--mint-green); opacity: 0.25; animation: spin-slow 120s linear infinite; }
+.visual-blueprint .layer-3 {
+    font-size: 5rem; color: var(--cream-white); opacity: 0.9;
+    filter: drop-shadow(0 0 15px var(--mint-green));
+    animation: float-tranquil 15s ease-in-out infinite;
+}
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes float-tranquil { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
-/* Blog Invite Section */
 .blog-invite-section { position: relative; background-color: var(--black-medium); padding: 90px 0; overflow: hidden; border-top: 1px solid rgba(107, 179, 155, 0.2); }
 .blog-background-image {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('img/blog.png');
@@ -115,7 +111,6 @@
 .blog-invite-content .section-subtitle { text-align: left; margin: 0 0 40px 0; max-width: none; font-size: 1.1rem; opacity: 0.9; color: var(--cream-white); font-weight: 300; }
 .blog-invite-content .cta-button { align-self: flex-start; }
 
-/* CTA Section */
 @keyframes gradient-pan { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 .cta-section {
     background: linear-gradient(60deg, var(--dark-sage), var(--mint-green), var(--dark-sage)); background-size: 200% 200%;
@@ -124,7 +119,6 @@
 .cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; text-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 .cta-section p { font-size: 1.1rem; margin-bottom: 40px; opacity: 0.9; }
 
-/* Contact Section */
 .contact-section { background-color: var(--cream-white); color: var(--black-soft); padding: 90px 0; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .contact-info .section-title { text-align: left; color: var(--black-soft); margin-bottom: 30px; }
@@ -150,7 +144,6 @@
 .form-group-minimal input:focus, .form-group-minimal textarea:focus { outline: none; border-color: var(--dark-sage); background-color: #fff; }
 .contact-form .cta-button { align-self: flex-start; cursor: pointer; padding-top: 12px; padding-bottom: 12px; }
 
-/* Sections Media Queries */
 @media (max-width: 900px) {
     .about-grid { grid-template-columns: 1fr; }
     .about-content .section-title, .about-content h3 { text-align: center; }

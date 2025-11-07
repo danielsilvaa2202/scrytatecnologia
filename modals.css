@@ -1,4 +1,3 @@
-/* Modals */
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background-color: rgba(0,0,0,0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
@@ -33,8 +32,6 @@
     text-transform: uppercase; letter-spacing: 0.5px;
 }
 .modal-cta:hover { background-color: var(--black-soft); color: var(--cream-white); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-
-/* Modals Media Queries */
 @media (max-width: 900px) {
     .modal-content { max-width: 500px; padding: 25px; }
     .modal-grid { grid-template-columns: 1fr; gap: 25px; }
